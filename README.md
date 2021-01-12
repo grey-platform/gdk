@@ -18,6 +18,8 @@
 我是大象，
 大象无形！
 
+QQ讨论群: 1083289681
+
 
 **grey** is a subsidiary product of the product "[Three Kingdoms:The Last Warlord](https://www.taptap.com/app/65333)" of [LongyouGame](http://www.longyougame.com/doku.php). At first, it was developed to solve the features of the product such as expandability, freedom, hot update, video streaming, user DIY, 3d extension, artificial intelligence, etc.. Later, these features were integrated and organized, thus forming a complete application-level solution.
 
