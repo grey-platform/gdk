@@ -19,7 +19,7 @@
 大象无形！
 
 
-**grey** is a subsidiary product of the product "[Handa Hegemony](https://www.taptap.com/app/65333)" of [Dragon Tour Company](http://www.longyougame.com/doku.php). At first, it was developed to solve the features of the product such as expandability, freedom, hot update, video streaming, user DIY, 3d extension, artificial intelligence, etc.. Later, these features were integrated and organized, thus forming a complete application-level solution.
+**grey** is a subsidiary product of the product "[Three Kingdoms:The Last Warlord](https://www.taptap.com/app/65333)" of [LongyouGame](http://www.longyougame.com/doku.php). At first, it was developed to solve the features of the product such as expandability, freedom, hot update, video streaming, user DIY, 3d extension, artificial intelligence, etc.. Later, these features were integrated and organized, thus forming a complete application-level solution.
 
 **grey** is a set of application development solutions developed using a c++-like language (cplus). It allows your organization to run freely in mainstream devices.
 
