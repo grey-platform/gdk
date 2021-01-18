@@ -24,12 +24,14 @@ public:
     ~CVector4();
     float* GetData();
     void Set(float x, float y, float z, float w) {
-        m[0] = x, m[1] = y, m[2] = z, m[3] = w;
+        X = x, Y = y, Z = z, W = w;
     }
-    union {
-        float m[4];
-        struct { float X, Y, Z, W; };
-    };
+    //union {
+    //    float m[4];
+    //    struct {
+            float X, Y, Z, W; 
+    //    };
+    //};
 };
 
 #endif

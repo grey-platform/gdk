@@ -97,8 +97,8 @@ inline int32 Sign( const T& a ){
 }
 
 template<class T>
-inline T Lerp( const T& a, const T& b, const float t ){
-    return (T)(a * (1.f - t)) + (b * t);
+inline T Lerp( T a, T b, float t ){
+    return (T)(a * (1.0f - t)) + (b * t);
 }
 
 template <class T>
