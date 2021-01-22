@@ -48,18 +48,18 @@ public:
     HVERTEXBUFFERHANDLE m_hVertexBufferHandle;
 };
 
-class CRenderDataBuffer{
-public:
-    CRenderDataBuffer();
-    ~CRenderDataBuffer();
-    void Begin( _EVERTEXTYPE  eVertexType );
-    void End();
-    void Render( _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, int32 nVertexCount );
-    void Render( _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, void* pIndexs, int32 nIndexCount, int32 nElementDataSize );
-
-public:
-    HRENDERDATABUFFER m_hRenderDataHandle;
-};
+//class CRenderDataBuffer{
+//public:
+//    CRenderDataBuffer();
+//    ~CRenderDataBuffer();
+//    void Begin( _EVERTEXTYPE  eVertexType );
+//    void End();
+//    void Render( _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, int32 nVertexCount );
+//    void Render( _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, void* pIndexs, int32 nIndexCount, int32 nElementDataSize );
+//
+//public:
+//    HRENDERDATABUFFER m_hRenderDataHandle;
+//};
 
 
 

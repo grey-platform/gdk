@@ -16,6 +16,7 @@
 #define __STANDARD_DIALOGS_H__
 
 #include <standard/gui.h>
+#include <standard/list.h>
 
 class CDialog: public CPanel, public CUIEvent{
 public:
@@ -24,7 +25,7 @@ public:
     virtual void Close();
 };
 
-class CMessageBox: public CPanel, public CUIEvent{
+class CMessageBox: public CDialog{
 public:
     CMessageBox( const char* strCaption, const char* strTitle );
     virtual ~CMessageBox();
@@ -36,15 +37,18 @@ private:
 
 };
 
-class COpenFileDialog: public CPanel, public CUIEvent{
+
+
+class COpenFileDialog: public CDialog{
 public:
     COpenFileDialog( const char* strFindPathExtname, const char* strDefaultFileName, const char* strDescText, CUIEvent* pEventObject, int32 nEventID );
+    COpenFileDialog( list<const char*>&vNameList, const char* strDefaultFileName, const char* strDescText, CUIEvent* pEventObject, int32 nEventID );
     virtual ~COpenFileDialog();
     char* GetFileName( char* strTextBuff );
     char* GetPathName( char* strTextBuff );
     char* GetPathFileName( char* strTextBuff );
 private:
-    void Init( const char* strFindPathExtname, const char* strDefaultFileName, const char* strDescText, int32 nEventID );
+    void Init( list<const char*>&vNameList, const char* strDefaultFileName, const char* strDescText, int32 nEventID );
     virtual void OnClick( CUIElement *pSelf );
     virtual void OnSelected( CUIElement* pSelf, int32 nType, int32 nIndex );
     void Close();
@@ -62,7 +66,7 @@ private:
     CButton* m_pCloseBtn;
 };
 
-class CSaveFileDialog: public CPanel, public CUIEvent{
+class CSaveFileDialog: public CDialog{
 public:
     CSaveFileDialog( const char* strFindPathExtname, const char* strDefaultFileName, const char* strDescText, CUIEvent* pEventObject, int32 nEventID );
     virtual ~CSaveFileDialog();
@@ -91,7 +95,7 @@ private:
 
 };
 
-class CColorDialog: public CPanel{
+class CColorDialog: public CDialog{
 public:
     CColorDialog();
     virtual ~CColorDialog();
@@ -101,7 +105,7 @@ protected:
 
 };
 
-class CAboutDialog: public CPanel, public CUIEvent{
+class CAboutDialog: public CDialog{
 public:
     CAboutDialog( const char* strName, const char* strVersion, const char* strWebSite, const char* strDesciption,  const char* strCopyright, const char* strDeveloper  );
     virtual ~CAboutDialog();

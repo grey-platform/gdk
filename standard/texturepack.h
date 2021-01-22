@@ -18,10 +18,11 @@
 #include <include/stdtype.h>
 #include <include/texture.h>
 #include <standard/texture.h>
+#include <standard/vector.h>
 
-class CTexturePack {
+class CTexturePack: public CTexture {
 public:
-    CTexturePack();
+    CTexturePack( const char* strFileName, ETextureWrapModes eWrapS = RepeatWrapping, ETextureWrapModes eWrapT = RepeatWrapping, ETextureFilters eMagFilter = LinearFilter, ETextureFilters eMinFilter = LinearFilter, bool32 bGenerateMipmaps = False );
     virtual ~CTexturePack();
     virtual void SetParame(int32 nParame, int32 nValue);
     CTexture* GetTexture(int32 nFrame);
@@ -41,7 +42,7 @@ public:
     float m_vAlphaArg[4];
     int32 m_nFrame;
     float m_fFrameSpeed;
-    HTEXTUREHANDLE* m_pTextureFrame;
+    vector<CTexture*> m_vTextureFrame;
 };
 
 #endif

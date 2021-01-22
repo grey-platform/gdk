@@ -1,6 +1,6 @@
 /*********************************************************************************
 *Copyright,2018-2028,Longyou
-*FileName: applite.h
+*FileName: wfxgamemodelmanager.h
 *Module: bigimage
 *Author: DaXiang
 *Version: 1.0
