@@ -1,7 +1,7 @@
 #ifndef ROM_H_
 #define ROM_H_
 
-#include "ppu.h"
+#include <fcsimulator/ppu.h>
 
 #define VERTICAL_MIRRORING 0
 #define HORIZONTAL_MIRRORING 1
