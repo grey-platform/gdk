@@ -112,6 +112,9 @@ typedef struct TV3T2{
 #define SETV3T2S( s, x, y, z, u, v ) (s).X = x, (s).Y = y, (s).Z = z, (s).U = u, (s).V = v
 #define SETV3T2P( p, x, y, z, u, v ) (p)->X = x, (p)->Y = y, (p)->Z = z, (p)->U = u, (p)->V = v
 
+#define SETV3C1T2S( s, x, y, z, c, u, v ) (s).X = x, (s).Y = y, (s).Z = z, (s).C = c, (s).U = u, (s).V = v
+#define SETV3C1T2P( p, x, y, z, c, u, v ) (p)->X = x, (p)->Y = y, (p)->Z = z,(p)->C = c, (p)->U = u, (p)->V = v
+
 typedef struct TV3C1T2{
     float X, Y, Z;
     color32 C;

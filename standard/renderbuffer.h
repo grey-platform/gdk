@@ -17,6 +17,7 @@
 
 #include <include/stdtype.h>
 #include <include/renderer.h>
+#include <standard/vector.h>
 
 
 void Vertex_Set( TV3C1 *pVert, float x, float y, float z, color32 c );
@@ -48,18 +49,45 @@ public:
     HVERTEXBUFFERHANDLE m_hVertexBufferHandle;
 };
 
-//class CRenderDataBuffer{
-//public:
-//    CRenderDataBuffer();
-//    ~CRenderDataBuffer();
-//    void Begin( _EVERTEXTYPE  eVertexType );
-//    void End();
-//    void Render( _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, int32 nVertexCount );
-//    void Render( _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, void* pIndexs, int32 nIndexCount, int32 nElementDataSize );
-//
-//public:
-//    HRENDERDATABUFFER m_hRenderDataHandle;
-//};
+class CRenderDataBuffer{
+public:
+    CRenderDataBuffer();
+    ~CRenderDataBuffer();
+    void Render( _EPRIMITIVETYPE ePrimitiveType );
+    void Reset();
+    bool32 Vaild();
+
+    int32 GetVertexCount();
+    bool32 SetVertexData( TV3C1T2* pData, int32 nCount );
+    bool32 SetVertexData( TV3C4FT2* pData, int32 nCount );
+    TV3C1T2* GetVertexV3C1T2();
+    TV3C4FT2* GetVertexV3C4FT2();
+    bool32 UpdateVertexData();
+    bool32 AddVertexData( TV3C1T2* pData, int32 nCount );
+    bool32 AddVertexData( TV3C4FT2* pData, int32 nCount );
+
+
+    int32 GetIndexCount();
+    bool32 SetIndexData( uint16* pData, int32 nCount );
+    bool32 SetIndexData( int32* pData, int32 nCount );
+    uint16* GetIndexUint16();
+    int32* GetIndexInt32();
+    bool32 UpdateIndexData();
+    bool32 AddIndexData( uint16* pData, int32 nCount );
+    bool32 AddIndexData( int32* pData, int32 nCount );
+
+public:
+    CVertexBuffer* m_pVertexBuffer;
+    CIndexBuffer* m_pIndexBuffer;
+
+    _EVERTEXTYPE m_eVertexType;
+    vector<byte>m_vVertexData;
+    int32 m_nVertexCount;
+
+    bool32 m_bIndexIsInt32;
+    vector<byte>m_vIndexData;
+    int32 m_nIndexCount;
+};
 
 
 
