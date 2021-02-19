@@ -1,17 +1,6 @@
 #ifndef NES_H_
 #define NES_H_
 
-//class DummyUI;
-//class PAPU;
-//class PPU;
-//class CPU;
-//class Keyboard;
-//class Mappers0;
-//class ROM;
-
-
-
-
 void JSNES_JSNES();
 void JSNES_reset();
 void JSNES_start();
@@ -39,11 +28,6 @@ extern float JSNES_CPU_FREQ_PAL;
 extern int JSNES_frameTime;
 extern int JSNES_isRunning;
 extern int JSNES_fpsFrameCount;
-//extern unsigned char* JSNES_romData;
-//extern int JSNES_romdatasize;
-
-
-
 
 
 #endif
