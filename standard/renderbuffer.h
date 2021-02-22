@@ -57,6 +57,7 @@ public:
     void Reset();
     bool32 Vaild();
 
+    bool32 CanUpdateVertex(void* pData, int32 nDataSize);
     int32 GetVertexCount();
     bool32 SetVertexData( TV3C1T2* pData, int32 nCount );
     bool32 SetVertexData( TV3C4FT2* pData, int32 nCount );
