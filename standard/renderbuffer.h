@@ -49,6 +49,7 @@ public:
     HVERTEXBUFFERHANDLE m_hVertexBufferHandle;
 };
 
+
 class CRenderDataBuffer{
 public:
     CRenderDataBuffer();
@@ -89,8 +90,6 @@ public:
     vector<byte>m_vIndexData;
     int32 m_nIndexCount;
 };
-
-
 
 
 #endif
