@@ -18,7 +18,6 @@
 #include <include/stdtype.h>
 
 
-
 #ifdef _NATIVE_
 #include <stdio.h>
 #else
