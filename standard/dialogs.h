@@ -116,5 +116,20 @@ private:
     CUIElement* m_vElementList[8];
 };
 
+class CInputDialog: public CDialog{
+public:
+    CInputDialog( const char* strCaption, const char* strTitle, CUIEvent* pEventObject, int32 nEventID );
+    virtual ~CInputDialog();
+    virtual void Close();
+    char* GetInputText( char* strTextBuff );
+
+
+private:
+    virtual void OnClick( CUIElement *pSelf );
+    CUIElement* m_vElementList[5];
+    CEditBox* m_pEditBox;
+    CUIEvent* m_pEventObject;
+};
+
 
 #endif
