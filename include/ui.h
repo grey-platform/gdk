@@ -75,7 +75,7 @@ typedef enum _ELABELTEXTALIGN{       //¶ÔÆë·½Ê½
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-EXTERN HUIHANDLE GUI_Windows_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
+EXTERN HUIHANDLE GUI_Windows_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight, bool32 bMaxHeader );
 EXTERN HUIHANDLE GUI_Lable_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
 EXTERN HUIHANDLE GUI_Button_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
 EXTERN HUIHANDLE GUI_IconButton_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );

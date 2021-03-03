@@ -284,7 +284,7 @@ public:
     static int32 LoadUIFormFile( const char* strFileName, CUIElement* pParent, list<CUIElement*>*pParentElementList );
     CUIElement();
     virtual ~CUIElement();
-    void CreateGUI( int32 x, int32 y, int32 width, int32 height );
+    void CreateGUI( int32 x, int32 y, int32 width, int32 height, int32 nParame0, int32 nParame1 );
     void Destroy();
     HUIHANDLE GetHandle();
     HUIHANDLE GetParentHandle();
@@ -347,8 +347,8 @@ protected:
 
 class CWindow: public CUIElement{
 public:
-    CWindow( int32 x, int32 y, int32 width, int32 height );
-    CWindow( int32 x, int32 y, int32 width, int32 height, const char* strTitle );
+    CWindow( int32 x, int32 y, int32 width, int32 height, bool32 bMaxHeader );
+    CWindow( int32 x, int32 y, int32 width, int32 height, const char* strTitle, bool32 bMaxHeader );
     virtual ~CWindow();
 };
 
