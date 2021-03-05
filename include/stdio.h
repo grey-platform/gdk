@@ -16,7 +16,7 @@
 #define __GRAY_SDK_STDIO_H__
 
 #include <include/stdtype.h>
-#ifdef _ANDROID_
+#ifdef __ANDROID__
 #include <include/stdarg.h>
 #endif
 
