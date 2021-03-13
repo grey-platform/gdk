@@ -37,7 +37,7 @@ public:
     void Compose( CVector3* pPos, CQuaternion* pQuaternion, CVector3* pScale );
     void GetRotationQuaternion( CQuaternion* ret );
     void GetInverse( CMatrix4* retM );
-
+    void Identity();
     //float m[ 16 ];
    // union {
    //     struct {
