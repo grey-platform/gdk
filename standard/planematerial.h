@@ -34,6 +34,7 @@ public:
     void SetColor( float r, float g, float b, float a );
     void SetBright( float v );
     void SetViewSize( float fWidth, float fHeight );
+    void SetScale( float x, float y, float z );
 
 private:
     HMATERIALUNIFORM m_hMapAttributeHandle;
@@ -41,6 +42,7 @@ private:
     HMATERIALUNIFORM m_hTranslateAttributeHandle;
     HMATERIALUNIFORM m_hColorAttributeHandle;
     HMATERIALUNIFORM m_hBrightAttributeHandle;
+    HMATERIALUNIFORM m_hScaleAttributeHandle;
     CVector3 m_tViewSize;
 
 };
