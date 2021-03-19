@@ -38,7 +38,7 @@ EXTERN void LogMem( void* p, int32 size );
 EXTERN HTTPHANDLE HttpRequest( uint32 ID, const char* strHost, int32 nPort, const char* strAddress );
 EXTERN char** GetFileList( const char* strFindDirName, int32* nCount );
 EXTERN void MakeMD532( void* pData, int32 nSize, char* pMD5Code_ );
-EXTERN void MakeMD516( void* pData, int32 nSize, char* pMD5Code_ );
+EXTERN void MakeMD516( void* pData, int32 nSize, byte* pMD5Code_ );
 EXTERN int32 ConvertUTF8ToGB2312( char* strDest, int32 nDestSize, char* strSrc, int32 nSrcSize );
 EXTERN int32 ConvertGB2312ToUTF8( char* strDest, int32 nDestSize, char* strSrc, int32 nSrcSize );
 EXTERN int32 UnCompressData( void* pSrc, int32 nSrcData, void* pDestBuff, int32 nDestBuffSize, byte* pProp );
