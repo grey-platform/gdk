@@ -270,7 +270,6 @@ private:
 
     void reallocateAndFillN( iterator position, const size_t& n, const T& val ){
         size_t newCapacity = getNewCapacity( n );
-
         T *newStart = (T*)Allocator__allocate( sizeof( T ), newCapacity );
         //T *newStart = (T *)malloc( sizeof( T ) * newCapacity );// Allocator<T>::allocate( newCapacity );
         T *newEndOfStorage = newStart + newCapacity;
