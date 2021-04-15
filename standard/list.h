@@ -110,7 +110,8 @@ public:
     list_node *node;
     size_t count;
     list_node *get_node(){
-        return (list_node *)malloc(sizeof( list_node ) );
+        list_node* _pNode = (list_node *)calloc(1, sizeof( list_node ) );
+        return _pNode;
     }   
     void put_node( list_node *p ){
         //list_node_allocator::deallocate( p );
