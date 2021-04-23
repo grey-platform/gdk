@@ -279,13 +279,13 @@ def Renderer_VertexBuffer_Render1
 def Renderer_IndexBuffer_Create
 def Renderer_IndexBuffer_Rlease
 def Renderer_IndexBuffer_Update
-def Renderer_VertexDataBuffer_Create
-def Renderer_VertexDataBuffer_Release
-def Renderer_VertexDataBuffer_Begin
-def Renderer_VertexDataBuffer_End
-def Renderer_VertexDataBuffer_Render
-def Renderer_VertexDataBuffer_Render_Index
-def Renderer_BeginRenderTarget
+;def Renderer_VertexDataBuffer_Create
+;def Renderer_VertexDataBuffer_Release
+;def Renderer_VertexDataBuffer_Begin
+;def Renderer_VertexDataBuffer_End
+;def Renderer_VertexDataBuffer_Render
+;def Renderer_VertexDataBuffer_Render_Index
+def Renderer_BeginRenderTarget 288
 def Renderer_EndRenderTarget
 def Renderer_SetClearColor
 def Renderer_SetDepthTest

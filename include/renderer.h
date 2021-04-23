@@ -165,12 +165,12 @@ EXTERN bool32 Renderer_IndexBuffer_Rlease( HINDEXBUFFERHANDLE hIndexBufferHandle
 EXTERN void Renderer_IndexBuffer_Update( HINDEXBUFFERHANDLE hIndexBufferHandle, void* pIndexData, int32 nCount );
 
 
-EXTERN HRENDERDATABUFFER Renderer_VertexDataBuffer_Create();
-EXTERN bool32 Renderer_VertexDataBuffer_Release( HRENDERDATABUFFER hRenderDataBufferHandle );
-EXTERN void Renderer_VertexDataBuffer_Begin( HRENDERDATABUFFER hRenderDataBufferHandle, _EVERTEXTYPE eVertexType );
-EXTERN void Renderer_VertexDataBuffer_End( HRENDERDATABUFFER hRenderDataBufferHandle );
-EXTERN void Renderer_VertexDataBuffer_Render( HRENDERDATABUFFER hRenderDataBufferHandle, _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, int32 nVertexCount );
-EXTERN void Renderer_VertexDataBuffer_Render_Index( HRENDERDATABUFFER hRenderDataBufferHandle, _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, void* pIndexs, int32 nIndexCount, int32 nElementDataSize );
+//EXTERN HRENDERDATABUFFER Renderer_VertexDataBuffer_Create();
+//EXTERN bool32 Renderer_VertexDataBuffer_Release( HRENDERDATABUFFER hRenderDataBufferHandle );
+//EXTERN void Renderer_VertexDataBuffer_Begin( HRENDERDATABUFFER hRenderDataBufferHandle, _EVERTEXTYPE eVertexType );
+//EXTERN void Renderer_VertexDataBuffer_End( HRENDERDATABUFFER hRenderDataBufferHandle );
+//EXTERN void Renderer_VertexDataBuffer_Render( HRENDERDATABUFFER hRenderDataBufferHandle, _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, int32 nVertexCount );
+//EXTERN void Renderer_VertexDataBuffer_Render_Index( HRENDERDATABUFFER hRenderDataBufferHandle, _EPRIMITIVETYPE ePrimitiveType, void* pVertexData, void* pIndexs, int32 nIndexCount, int32 nElementDataSize );
 
 EXTERN void Renderer_BeginRenderTarget( HTEXTUREHANDLE hTextureTarget, int32 nViewportWidth, int32 nViewportHeight );
 EXTERN void Renderer_EndRenderTarget();

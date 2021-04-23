@@ -28,7 +28,6 @@ typedef unsigned short uint16;
 typedef unsigned int uint32;
 typedef unsigned int bool32;
 typedef unsigned char bool8;
-//typedef unsigned __int64 uint64;
 
 typedef void* object32;
 typedef uint32 color32;
@@ -46,22 +45,9 @@ typedef int intptr_t;
 //typedef uint32 size_t;
 #endif
 
-//#ifdef _NATIVE_
-//typedef uint32 size_t;
-//#endif
-
-
 
 #define False 0
 #define True  1
-
-//#ifndef WIN32
-////#ifndef _NATIVE_
-//typedef unsigned char bool;
-//#define false 0
-//#define true 1
-////#endif
-//#endif
 
 #ifdef CPLUS
 #ifndef _APP_DEBUG_
