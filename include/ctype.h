@@ -16,9 +16,6 @@
 
 #include <include/stdtype.h>
 
-#ifdef _NATIVE_
-#include <ctype.h>
-#else
 #define isalnum ___isalnum___
 #define isalpha ___isalpha___
 #define iscntrl ___iscntrl___
@@ -32,7 +29,7 @@
 #define isxdigit ___isxdigit___
 #define tolower ___tolower___
 #define toupper ___toupper___
-#endif
+
 
 EXTERN int ___isalnum___( int ch );
 EXTERN int ___isalpha___( int ch );
@@ -47,6 +44,5 @@ EXTERN int ___isupper___( int ch );
 EXTERN int ___isxdigit___( int ch );
 EXTERN int ___tolower___( int ch );
 EXTERN int ___toupper___( int ch );
-
 
 #endif

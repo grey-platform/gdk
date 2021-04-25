@@ -15,14 +15,7 @@
 #define __GRAY_SDK_ASSERT_H___
 
 #include <include/stdtype.h>
-
-#ifdef _NATIVE_
-#include <assert.h>
-#else
 #define assert ___assert___
-#endif
-
-
 EXTERN void ___assert___( bool8 exp );
 
 

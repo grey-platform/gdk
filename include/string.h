@@ -16,9 +16,7 @@
 #define __GRAY_SDK_STRING_H__
 
 #include <include/stdtype.h>
-#ifdef _NATIVE_
-#include <string.h>
-#else
+
 #define memchr ___memchr___
 #define memcmp ___memcmp___
 #define memcpy ___memcpy___
@@ -44,7 +42,6 @@
 #define strtol ___strtol___
 #define strtoul ___strtoul___
 #define strxfrm ___strxfrm___
-#endif
 
 
 EXTERN void *___memchr___( const void *buffer, int ch, int count );

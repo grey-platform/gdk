@@ -16,13 +16,7 @@
 
 #include <include/stdtype.h>
 
-
-
-#ifdef _NATIVE_
-#include <locale.h>
-#else
 #define localeconv ___localeconv___
-#endif
 
 struct _lconv{
     char *decimal_point;

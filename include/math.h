@@ -15,9 +15,7 @@
 #define __GRAY_SDK_MATH_H__
 
 #include <include/stdtype.h>
-#ifdef _NATIVE_
-#include <math.h>
-#else
+
 #define acos ___acos___
 #define asin ___asin___
 #define atan ___atan___
@@ -57,7 +55,6 @@
 //#define HUGE_VALL  ((long double)INFINITY)
 #define NAN        ((float)(INFINITY * 0.0F))
 
-#endif
 
 
 

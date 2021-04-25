@@ -21,12 +21,8 @@
 typedef _JBTYPE jmp_buf[_JBLEN];
 
 
-#ifdef _NATIVE_
-//#include <setjmp.h>
-#else
 #define longjmp ___longjmp___
 #define setjmp ___setjmp___
-#endif
 
 
 EXTERN void ___longjmp___( jmp_buf envbuf, int status );

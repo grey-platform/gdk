@@ -16,9 +16,7 @@
 
 
 
-#ifndef _NATIVE_
-//#define raise ___raise___
-#endif
+
 
 
 int ___raise___( int signal );

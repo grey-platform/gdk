@@ -129,11 +129,11 @@ public:
     sortlist_node *node;
     size_t count;
     sortlist_node *get_node(){
-        return (sortlist_node *)malloc(sizeof( sortlist_node ) );
+        return (sortlist_node *)MALLOC(sizeof( sortlist_node ) );
     }   
     void put_node( sortlist_node *p ){
         //list_node_allocator::deallocate( p );
-        free( p );
+        FREE( p );
     }
     sortlist_node *create_node( const Key &key, const T &value ){
         sortlist_node *p = get_node();

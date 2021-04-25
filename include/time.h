@@ -17,9 +17,7 @@
 
 #include <include/stdtype.h>
 
-#ifdef _NATIVE_
-#include <time.h>
-#else
+
 #define asctime ___asctime___
 #define clock ___clock___
 #define ctime ___ctime___
@@ -31,7 +29,7 @@
 #define time ___time___
 
 #define CLOCKS_PER_SEC  (1000)
-#endif
+
 
 
 struct _tm{

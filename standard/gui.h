@@ -273,12 +273,15 @@ int32 CUIElement__BuildEventID();
 class CUIElement;
 class CUIEvent{
 public:
+    CUIEvent();
+    virtual ~CUIEvent();
     virtual void OnClick( CUIElement *pSelf );
     virtual void OnMouseEvent( CUIElement *pSelf, EUIMouseMessage eMouseMessage, int32 x, int32 y, int32 z, int32 s );
     virtual void OnKeyEvent( CUIElement *pSelf, EUIKeyMessage eKeyMessage, int32 nKey );
     virtual int32 OnTextEditEvent( CUIElement *pSelf, const char* strText );
     virtual void OnSelected( CUIElement* pSelf, int32 nType, int32 nIndex );
 };
+
 
 class CUIElement{
 public:

@@ -19,8 +19,6 @@
 //#else
 #include <include/stdtype.h>
 #include <include/time.h>
-//#include <include/stdtype.h>
-//#include <include/tools.h>
 #include <include/assert.h>
 //#endif
 

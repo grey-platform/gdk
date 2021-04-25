@@ -34,7 +34,6 @@ public:
 private:
     virtual void OnClick( CUIElement *pSelf );
     CUIElement* m_vElementList[ 4 ];
-
 };
 
 
@@ -57,6 +56,7 @@ private:
     char m_strPath[256];
     int32 m_nSelectIndex;
 
+    CPanel* m_pDlgPanel;
     CUIEvent* m_pEventObject;
     CLable* m_pDescLB;
     CLable* m_pPathDescLB;

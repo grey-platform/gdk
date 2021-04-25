@@ -27,9 +27,7 @@
 //    long rem;
 //} ldiv_t;
 
-#ifdef _NATIVE_
-#include <stdlib.h>
-#else
+
 #define calloc ___calloc___
 #define free ___free___
 #define malloc ___malloc___
@@ -50,7 +48,7 @@
 #define srand ___srand___
 #define system ___system___
 #define strtof ___strtof___
-#endif
+
 #define _RAND_MAX_ 0x7fff
 #define setmallocbuffer __setmallocbuffer__
 

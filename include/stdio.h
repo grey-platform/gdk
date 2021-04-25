@@ -16,13 +16,7 @@
 #define __GRAY_SDK_STDIO_H__
 
 #include <include/stdtype.h>
-#ifdef __ANDROID__
-#include <include/stdarg.h>
-#endif
 
-#ifdef _NATIVE_
-#include <stdio.h>
-#else
 typedef char* va_list;
 
 #define clearerr ___clearerr___
@@ -74,7 +68,6 @@ typedef char* va_list;
 #define _IOLBF 0x0040
 #define _IONBF 0x0004
 
-#endif
 
 typedef unsigned int _FILE;
 
