@@ -18,6 +18,7 @@
 #include <include/stdtype.h>
 #include <include/material.h>
 #include <include/math.h>
+#include <standard/reference.h>
 #include <standard/texture.h>
 
 
@@ -27,7 +28,7 @@ enum EMATERIALRENDERTYPE {
     EMRT_NORMALMODEL,       //ÆÕÍ¨Ä£ÐÍ
 };
 
-class CMaterial{
+class CMaterial: public CRefClass<CMaterial*>{
 public:
     CMaterial();
     virtual ~CMaterial();

@@ -17,6 +17,7 @@
 
 #include <include/stdtype.h>
 #include <include/renderer.h>
+#include <standard/reference.h>
 #include <standard/vector.h>
 
 
@@ -27,7 +28,7 @@ void Vertex_Set(TV3C4FT2 *pVert, float x, float y, float z, float r, float g, fl
 
 
 class CVertexBuffer;
-class CIndexBuffer{
+class CIndexBuffer: public CRefClass<CIndexBuffer*>{
 public:
     CIndexBuffer( void* pIndexData, int32 nCount, bool32 bDynamic, int32 nElementDataSize );
     ~CIndexBuffer();
@@ -37,7 +38,7 @@ public:
     HINDEXBUFFERHANDLE m_hIndexBufferHandle;
 };
 
-class CVertexBuffer{
+class CVertexBuffer: public CRefClass<CVertexBuffer*>{
 public:
     CVertexBuffer( _EVERTEXTYPE eVertexType, void* pVertexData, int32 nVertexCount, bool32 bDynamic );
     ~CVertexBuffer();
@@ -50,7 +51,7 @@ public:
 };
 
 
-class CRenderDataBuffer{
+class CRenderDataBuffer: public CRefClass<CRenderDataBuffer*>{
 public:
     CRenderDataBuffer();
     ~CRenderDataBuffer();

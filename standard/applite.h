@@ -17,9 +17,9 @@
 
 #include <include/stdtype.h>
 #include <include/ui.h>
+#include <standard/reference.h>
 
-
-class CAppLite{
+class CAppLite: public CRefClass<CAppLite*>{
 public:
     static HUIHANDLE m_hRootHandle;
     static int32 m_nRootWidth;

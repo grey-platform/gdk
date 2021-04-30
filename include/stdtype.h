@@ -76,7 +76,7 @@ typedef unsigned char bool;
 #define EXTERN
 
 #ifdef CPLUS
-
+#ifdef _APP_DEBUG_
 void debug_output( const char* strText );
 void debug_outputstring( const char* strText );
 void debug_outputintvalue( int value );
@@ -85,6 +85,7 @@ void* debug_calloc( unsigned int count, unsigned int size, const char* strFileNa
 void* debug_realloc( void* p, unsigned int size, const char* strFileName, int nFileNo );
 void debug_free( void* p, const char* file, int line );
 
+//#ifdef OVERRIDENEW 
 inline void* operator new(unsigned int size, const char* file, int line){
     //debug_outputstring("operator new");
     //debug_outputstring( file );
@@ -97,14 +98,25 @@ void operator delete(void* p);
 void operator delete[]( void* p );
 void operator delete(void* p, const char* file, int line);
 void operator delete[]( void* p, const char* file, int line );
-
+//#endif
 
 #define new new( __FILE__, __LINE__ )
-
 #define MALLOC( s ) debug_malloc( s, __FILE__, __LINE__ )
 #define REALLOC( p, s ) debug_realloc(p,s, __FILE__, __LINE__)
 #define CALLOC( n, s ) debug_calloc( n, s, __FILE__, __LINE__ )
 #define FREE( p ) if( p ) debug_free( p, __FILE__, __LINE__ ), p = 0;
+
+#else
+
+#define MALLOC( s ) malloc( s )
+#define REALLOC( p, s ) realloc(p,s)
+#define CALLOC( n, s ) calloc( n, s )
+#define FREE( p ) if( p ) free( p ), p = 0;
+
+#endif
+
+
+
 #define NEW new
 #define DELETE( p )  if( p ) delete( p ), p = 0;
 #define NEW2DARRAY( p, T, x, y ){\

@@ -16,6 +16,7 @@
 #define __BIGIMAGE_FLYCAMERACONTROL_H__
 
 #include <bigimage/camera.h>
+
 class CFlyCameraControl {
 public:
     CFlyCameraControl( CCamera *pCamera );

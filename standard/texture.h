@@ -17,6 +17,7 @@
 
 #include <include/stdtype.h>
 #include <include/texture.h>
+#include <standard/reference.h>
 
 //#define NEAREST  (9728)
 //#define LINEAR  (9729)
@@ -51,7 +52,7 @@ enum ETextureFilters{
     LinearMipMapLinearFilter,
 };
 
-class CTexture{
+class CTexture: public CRefClass<CTexture*>{
 public:
     CTexture();
     virtual ~CTexture();

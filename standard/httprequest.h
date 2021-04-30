@@ -17,6 +17,7 @@
 
 #include <include/stdtype.h>
 #include <include/tools.h>
+#include <standard/reference.h>
 
 class CHttpRequest;
 class CHttpRequestEvent{
@@ -26,7 +27,7 @@ public:
     virtual void OnProcess( CHttpRequest* pHttpRequest, int32 nCur, int32 nMax );
 };
 
-class CHttpRequest{
+class CHttpRequest: public CRefClass<CHttpRequest*>{
 public:
     CHttpRequest( const char* strHost, int32 nPort, const char* strAddress );
     virtual ~CHttpRequest();

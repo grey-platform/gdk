@@ -19,6 +19,7 @@
 #include <include/ui.h>
 //#include <include/delegate.h>
 //#include <standard/delegate.h>
+#include <standard/reference.h>
 #include <standard/texture.h>
 #include <standard/list.h>
 
@@ -264,9 +265,6 @@ typedef enum EUIKeyMessage{
 #define VK_OEM_CLEAR 0xFE
 
 
-
-
-
 extern HUIHANDLE CUIElement__vGUIEventTable[EVENTTABLESIZE]; //UI Event Table
 int32 CUIElement__BuildEventID();
 
@@ -280,10 +278,11 @@ public:
     virtual void OnKeyEvent( CUIElement *pSelf, EUIKeyMessage eKeyMessage, int32 nKey );
     virtual int32 OnTextEditEvent( CUIElement *pSelf, const char* strText );
     virtual void OnSelected( CUIElement* pSelf, int32 nType, int32 nIndex );
+    virtual void OnUserEvent( uint32 nParame0, uint32 nParame1 );
 };
 
 
-class CUIElement{
+class CUIElement: public CRefClass<CUIElement*>{
 public:
     static int32 LoadUIFormFile( const char* strFileName, CUIElement* pParent, list<CUIElement*>*pParentElementList );
     CUIElement();
@@ -500,11 +499,6 @@ public:
     virtual int32 ProcessKeyEvent( EUIKeyMessage eKeyMessage, int32 nKey );
     virtual int32 ProcessGetTextureEvent( const char* strFileName, HTEXTUREHANDLE* hTextureHandle );
     void ClearTexture();
-    //TUIMOUSEEVENT OnMouseEvent;
-    //TUIKEYEVENT   OnKeyEvent;
-    //TGETTEXTUREFILECALLBACK OnGetTextureEvent;
-    //map<uint32, CTexture*>m_vRichViewTextureList;
-
 };
 
 class CHtmlView: public CUIElement{
@@ -514,16 +508,10 @@ public:
     void SetText( const char* strText );
     void Clear();
     void ClearTexture();
-    //TGETTEXTUREFILECALLBACK OnGetTextureEvent;
-    //map<uint32, CTexture*>m_vRichViewTextureList;
 };
 
 class CEditBox: public CUIElement{
 public:
-    //static bool32 CheckInputText( int32 nLen, char* strBuff );
-    //static bool32 CheckInputNumber( float fMin, float fMax, float* pRet );
-    //static bool32 CheckInputInteger( int32 nMin, int32 nMax, int32* pRet );
-
     CEditBox( int32 x, int32 y, int32 width, int32 height );
     virtual ~CEditBox();
     virtual int32 ProcessTextEditEvent( int32 nStrFarAddress );
