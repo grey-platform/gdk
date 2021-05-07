@@ -200,7 +200,7 @@ public: // erase
         return iterator( next_node );    
     }
 
-    void remove( const T &value ){
+    void Remove( const T &value ){
         iterator it = begin();
         iterator it_end = end();
         for( ; it != it_end; ){
