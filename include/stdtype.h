@@ -73,10 +73,11 @@ typedef unsigned char bool;
 #endif
 
 //
-#define EXTERN
+
 
 #ifdef CPLUS
 #ifdef _APP_DEBUG_
+#define EXTERN
 void debug_output( const char* strText );
 void debug_outputstring( const char* strText );
 void debug_outputintvalue( int value );
@@ -107,7 +108,7 @@ void operator delete[]( void* p, const char* file, int line );
 #define FREE( p ) if( p ) debug_free( p, __FILE__, __LINE__ ), p = 0;
 
 #else
-
+#define EXTERN extern "C"
 #define MALLOC( s ) malloc( s )
 #define REALLOC( p, s ) realloc(p,s)
 #define CALLOC( n, s ) calloc( n, s )

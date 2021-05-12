@@ -36,7 +36,7 @@ enum ELogType{
 #define LOG_WARNING LogInfo( ELT_Warning, __FILE__, __LINE__ ); LogOut
 #define LOG_DEBUG LogInfo( ELT_Debug, __FILE__, __LINE__ ); LogOut
 
-#define TRACE LogInfo( ELT_Debug, __FILE__, __LINE__ ); LogOut("trace");
+#define TRACEOUT LogInfo( ELT_Debug, __FILE__, __LINE__ ); LogOut("trace");
 #define TRACEINFO LogInfo( ELT_Debug, __FILE__, __LINE__ ); LogOut
 #define TRACEMEM LogInfo( ELT_Debug, __FILE__, __LINE__ ); LogOut("trace mem: "); LogMem
 

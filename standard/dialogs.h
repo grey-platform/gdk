@@ -83,6 +83,7 @@ private:
 private:
     char m_strPath[256];
     CUIEvent* m_pEventObject;
+    CPanel* m_pDlgPanel;
     CLable* m_pDescLB;
     CLable* m_pPathDescLB;
     CLable* m_pPathLB;
