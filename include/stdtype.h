@@ -86,15 +86,15 @@ void* debug_calloc( unsigned int count, unsigned int size, const char* strFileNa
 void* debug_realloc( void* p, unsigned int size, const char* strFileName, int nFileNo );
 void debug_free( void* p, const char* file, int line );
 
+void* debug_new( unsigned int size, const char* strFileName, int nFileNo );
+
 //#ifdef OVERRIDENEW 
+//inline void* operator new(unsigned int size, const char* file, int line){
+//    return debug_malloc( size, file, line );
+//}
 inline void* operator new(unsigned int size, const char* file, int line){
-    //debug_outputstring("operator new");
-    //debug_outputstring( file );
-    //debug_outputintvalue( line );
-
-    return debug_malloc( size, file, line );
+    return debug_new( size, file, line );
 }
-
 void operator delete(void* p);
 void operator delete[]( void* p );
 void operator delete(void* p, const char* file, int line);

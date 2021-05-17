@@ -127,5 +127,6 @@ EXTERN int SubAppStart( void* pfnMain, int nMode, int nWidth, int nHeight, int n
 #define EVENT_SOUND (5)
 #define EVENT_NEEDDATA (6)
 #define EVENT_REMOTEFILETASK (7)
+#define EVENT_APPFINALYDEBUG (8)
 
 #endif

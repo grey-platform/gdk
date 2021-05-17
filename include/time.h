@@ -53,5 +53,6 @@ EXTERN struct _tm *___localtime___( const unsigned int *_time, struct _tm* stm )
 EXTERN unsigned int ___mktime___( struct _tm *_time );
 EXTERN int ___strftime___( char *str, int maxsize, const char *fmt, struct _tm *_time );
 EXTERN unsigned int ___time___( unsigned int *_time );
+EXTERN uint32 ___getperformancecount___();
 
 #endif
