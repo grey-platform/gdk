@@ -28,6 +28,17 @@ enum EMATERIALRENDERTYPE {
     EMRT_NORMALMODEL,       //ÆÕÍ¨Ä£ÐÍ
 };
 
+enum EUNIFORMTYPE{
+    EUT_FLOAT,
+    EUT_VEC2,
+    EUT_VEC3,
+    EUT_VEC4,
+    EUT_MATRIX33,
+    EUT_MATRIX44,
+    EUT_SAMPLER,
+    EUT_COUNT,
+};
+
 class CMaterial: public CRefClass<CMaterial*>{
 public:
     CMaterial();
@@ -75,7 +86,7 @@ public:
     HMATERIALHANDLE m_hMaterialHandle;
 
 protected:
-    virtual HMATERIALUNIFORM GetUniformLocation(const char* strAttributeName);
+    virtual HMATERIALUNIFORM GetUniformLocation(const char* strAttributeName, EUNIFORMTYPE eType );
     virtual void SetUniform1i(HMATERIALUNIFORM nAttribute, int32 nValue);
     virtual void SetUniform1f(HMATERIALUNIFORM nAttribute, float fValue);
     virtual void SetUniform2fv(HMATERIALUNIFORM nAttribute, void *pData);

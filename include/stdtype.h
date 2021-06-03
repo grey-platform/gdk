@@ -131,6 +131,8 @@ p = 0;\
 }
 #elif _NATIVE_
 //#define EXTERN extern "C"
+#else
+#define EXTERN
 #endif
 
 

@@ -24,7 +24,7 @@ EXTERN HMATERIALHANDLE Material_Create( const char* strVertexShaderCode, const c
 EXTERN bool32 Material_Release( HMATERIALHANDLE hMaterialHandle );
 EXTERN void Material_Begin( HMATERIALHANDLE hMaterialHandle );
 EXTERN void Material_End( HMATERIALHANDLE hMaterialHandle );
-EXTERN HMATERIALUNIFORM Material_GetUniform( HMATERIALHANDLE hMaterialHandle, const char* strName );
+EXTERN HMATERIALUNIFORM Material_GetUniform( HMATERIALHANDLE hMaterialHandle, const char* strName, int32 nType );
 EXTERN void Material_SetInt( HMATERIALHANDLE hMaterialHandle, HMATERIALUNIFORM hMaterialAttribute, int32 nValue );
 EXTERN void Material_SetFloat( HMATERIALHANDLE hMaterialHandle, HMATERIALUNIFORM hMaterialAttribute, float fValue );
 EXTERN void Material_SetVec2( HMATERIALHANDLE hMaterialHandle, HMATERIALUNIFORM hMaterialAttribute, void* pValue );

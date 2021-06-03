@@ -1,6 +1,8 @@
 #ifndef NES_H_
 #define NES_H_
 
+
+
 void JSNES_JSNES();
 void JSNES_reset();
 void JSNES_start();
