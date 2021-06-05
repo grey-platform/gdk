@@ -44,16 +44,16 @@
 #define strxfrm ___strxfrm___
 
 
-EXTERN void *___memchr___( const void *buffer, int ch, int count );
+EXTERN void * ___memchr___( const void *buffer, int ch, int count );
 EXTERN int ___memcmp___( const void *buffer1, const void *buffer2, int count );
-EXTERN void *___memcpy___( void *to, const void *from, int count );
-EXTERN void *___memmove___( void *to, const void *from, int count );
-EXTERN void *___memset___( void *buffer, int ch, int count );
-EXTERN char *___strcat___( char *str1, const char *str2 );
-EXTERN char *___strchr___( const char *str, int ch );
+EXTERN void * ___memcpy___( void *to, const void *from, int count );
+EXTERN void * ___memmove___( void *to, const void *from, int count );
+EXTERN void * ___memset___( void *buffer, int ch, int count );
+EXTERN char * ___strcat___( char *str1, const char *str2 );
+EXTERN char * ___strchr___( const char *str, int ch );
 EXTERN int ___strcmp___( const char *str1, const char *str2 );
 EXTERN int ___strcoll___( const char *str1, const char *str2 );
-EXTERN char *___strcpy___( char *to, const char *from );
+EXTERN char * ___strcpy___( char *to, const char *from );
 EXTERN int ___strcspn___( const char *str1, const char *str2 );
 EXTERN char *___strerror___( int num );
 EXTERN int ___strlen___( const char *str );

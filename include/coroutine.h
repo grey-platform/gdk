@@ -212,5 +212,61 @@
 #define WAIT_NEW( c,l) PT_WAIT_WHILE(pt1, c, l )
 #define WAITRETURN_NEW( c, r, l ) PT_WAIT_RETURN_WHILE(pt1, c, l, r )
 
+
+//////////////////////////////////////////////////////////////////////////////////
+//COROFUNC
+
+#define COROFUNCNAME() __pt_##FUNCNAME__
+#define COROFUNCYIELD() PT_YIELD( COROFUNCNAME(), __LINE__ );
+
+#define COROFUNCBEGIN( a, b, c, d )\
+int32 FUNCNAME( int32 nDelta, float fDelta, a, b, c, d ){ \
+static int32 COROFUNCNAME() = 0;
+    
+
+#define COROFUNCEND() PT_END(COROFUNCNAME()); }
+
+#define COROFUNCCALL( FuncName, a, b, c, d ) PT_WAIT_WHILE( COROFUNCNAME(),  FuncName( nDelta, fDelta, a, b, c, d ) != PT_ENDED, __LINE__ );
+
+#define COROFUNCDECLAR( FuncName, a, b, c, d ) int32 FuncName( int32 nDelta, float fDelta, a, b, c, d );
+
+#define COROFUNCS() PT_BEGIN( COROFUNCNAME() );
+
+
+#define COROFUNCRETURN() PT_EXIT(COROFUNCNAME());
+
+#define COROFUNCTRACENAMEVALUE( s ) printf("coro name:%s value: %d\n", #s, COROFUNCNAME() );
+
+////COROFUNCDECLAR( BBB )
+////
+////#define FUNCNAME AAA
+////COROFUNCBEGIN()
+////printf( "%d\n", 1 );
+////COROFUNCYIELD()
+////printf( "%d\n", 2 );
+////COROFUNCYIELD()
+////printf( "%d\n", 3 );
+////COROFUNCYIELD()
+////COROFUNCCALL( BBB );
+////printf( "%d\n", 4 );
+////COROFUNCYIELD()
+////printf( "%d\n", 5 );
+////COROFUNCEND()
+////#undef FUNCNAME
+////
+////#define FUNCNAME BBB
+////COROFUNCBEGIN()
+////printf( "%d\n", 11 );
+////COROFUNCYIELD()
+////printf( "%d\n", 12 );
+////COROFUNCYIELD()
+////printf( "%d\n", 13 );
+////COROFUNCYIELD()
+////printf( "%d\n", 14 );
+////COROFUNCYIELD()
+////printf( "%d\n", 15 );
+////COROFUNCEND()
+////#undef FUNCNAME
+
 #endif
 
