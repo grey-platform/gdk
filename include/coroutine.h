@@ -217,11 +217,17 @@
 //COROFUNC
 
 #define COROFUNCNAME() __pt_##FUNCNAME__
+#define COROFUNCTIMENAME() __pt_##FUNCNAME__time__
+
 #define COROFUNCYIELD() PT_YIELD( COROFUNCNAME(), __LINE__ );
+#define COROFUNCSLEEP( n ) \
+COROFUNCTIMENAME() = clock() + n;\
+PT_WAIT_UNTIL(COROFUNCNAME(), (clock() >= COROFUNCTIMENAME()), __LINE__ );
 
 #define COROFUNCBEGIN( a, b, c, d )\
 int32 FUNCNAME( int32 nDelta, float fDelta, a, b, c, d ){ \
 static int32 COROFUNCNAME() = 0;
+static int32 COROFUNCTIMENAME() = 0;
     
 
 #define COROFUNCEND() PT_END(COROFUNCNAME()); }
@@ -235,7 +241,7 @@ static int32 COROFUNCNAME() = 0;
 
 #define COROFUNCRETURN() PT_EXIT(COROFUNCNAME());
 
-#define COROFUNCTRACENAMEVALUE( s ) printf("coro name:%s value: %d\n", #s, COROFUNCNAME() );
+//#define COROFUNCTRACENAMEVALUE( s ) printf("coro name:%s value: %d\n", #s, COROFUNCNAME() );
 
 ////COROFUNCDECLAR( BBB )
 ////
