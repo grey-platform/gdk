@@ -70,7 +70,15 @@ EXTERN int ___atexit___( void( *func )(void) );
 EXTERN void *___bsearch___( const void *key, const void *buf, int num, int size, int( *compare )(const void *, const void *) );
 EXTERN void ___exit___( int exit_code );
 EXTERN char *___getenv___( const char *name );
-EXTERN void ___qsort___( void *buf, int num, int size, int( *compare )(const void *, const void *) );
+//EXTERN void ___qsort___( void *buf, int num, int size, int( *compare )(const void *, const void *) );
+//buf:要比较的数据    
+//num:数据的个数    
+//structsize:单个数据的大小    
+//comparepos:单个数据要比较的位置在哪里   
+//compareDataType:单个数据要比较的数据类型（0：float，1：int32,2:uint32）   
+//order:升序还是降序（0：升序 1：降序） 
+EXTERN void ___qsort___( void* buf, int num, int structsize, int comparepos, int compareDataType, int order );
+
 EXTERN int ___rand___( void );
 EXTERN void ___srand___( unsigned seed );
 EXTERN int ___system___( const char *command );
