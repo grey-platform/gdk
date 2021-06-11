@@ -75,7 +75,7 @@ EXTERN char *___getenv___( const char *name );
 //num:数据的个数    
 //structsize:单个数据的大小    
 //comparepos:单个数据要比较的位置在哪里   
-//compareDataType:单个数据要比较的数据类型（0：float，1：int32,2:uint32）   
+//compareDataType:单个数据要比较的数据类型（0：float，1：int32, 2:uint32）   
 //order:升序还是降序（0：升序 1：降序） 
 EXTERN void ___qsort___( void* buf, int num, int structsize, int comparepos, int compareDataType, int order );
 

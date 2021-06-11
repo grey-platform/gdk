@@ -55,6 +55,7 @@ typedef enum EUIElement{
     UI_DATAVIEW,
     UI_RICHTEXTVIEW,
     UI_HTMLVIEW,
+    UI_TRANSLATENODE,
     UI_COUNT,
 }EUIElement;
 
@@ -445,6 +446,12 @@ public:
     void Reset();
 };
 
+class CTranslateNode: public CUIElement{
+public:
+    CTranslateNode( int32 x, int32 y );
+    virtual ~CTranslateNode();
+};
+
 class CTranslatePanel: public CUIElement{
 public:
     CTranslatePanel( int32 x, int32 y, int32 width, int32 height );
@@ -518,6 +525,8 @@ public:
     void SetText( const char* strText );
     void Clear();
     void SetReadOnly( bool32 bValue );
+    int32 GetTextInteger();
+    float GetTextFloat();
     CUIEvent* OnTextEditEventObject;
 };
 

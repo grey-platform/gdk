@@ -23,7 +23,7 @@ class ITask{
 public:
     ITask();
     virtual ~ITask();
-    virtual int32 Update( float fDelta );
+    virtual int32 UpdateTask( float fDelta );
     virtual int32 Stop();
     virtual void OnMouseEvent( EUIMouseMessage eMouseMessage, int32 x, int32 y );
     virtual void OnKeyEvent( EUIKeyMessage eKeyMessage, int32 nKey );

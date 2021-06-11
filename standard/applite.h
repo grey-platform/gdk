@@ -37,6 +37,7 @@ public:
     virtual int32 NeedData( int32 nParame0, int32 nParame1, int32 nParame2, int32 nParame3 );
     virtual int32 RemoteFileTaskEvent( int32 nParam0, int32 nParam1, int32 nParam2, int32 nParam3 );
     virtual int32 FinalyDebug();
+    
 };
 
 CAppLite* StartApplite();
