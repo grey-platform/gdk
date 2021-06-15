@@ -44,7 +44,7 @@ EXTERN int32 ConvertGB2312ToUTF8( char* strDest, int32 nDestSize, char* strSrc, 
 EXTERN int32 UnCompressData( void* pSrc, int32 nSrcData, void* pDestBuff, int32 nDestBuffSize, byte* pProp );
 EXTERN int32 SYSTEM_SetFarData( int32 nFarDataAddress, void* pData, int32 nSize );
 EXTERN REMOTEFILEHANDLE GetRemoteFile( uint32 ID, const char* strURL, void* pBuff, int32 nBuffSize );
-//EXTERN int32 WritePng( const char* strFileName, int32 nWidth, int32 nHeight, int32 nChannel, void* pData );
+EXTERN int32 DebugSystemCall( const char* strFuncName, const char* strParame0, const char* strParame1, const char* strParame2, const char* strParame3 );
 
 EXTERN uint32 ___PrintNativeCallInfo___();
 #endif
