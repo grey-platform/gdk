@@ -31,7 +31,7 @@ public:
     void Clear();
 
 private:
-    map<uint32, CTexture*>m_vTextureMap;
+    map<uint32, Ref< CTexture* >>m_vTextureMap;
 
 };
 

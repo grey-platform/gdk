@@ -39,7 +39,7 @@ enum EUNIFORMTYPE{
     EUT_COUNT,
 };
 
-class CMaterial: public CRefClass<CMaterial*>{
+class CMaterial: public CRefObject{
 public:
     CMaterial();
     virtual ~CMaterial();

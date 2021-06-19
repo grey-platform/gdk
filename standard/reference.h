@@ -29,12 +29,13 @@ public:
     Ref( RefEntity< TYPE >& tNewReferenceObject );
     Ref( CRefClass<TYPE>* pRefClass );
     Ref( void* pRefClass );
+    Ref( const Ref< TYPE >& tObject );
     ~Ref();
     const Ref< TYPE >& operator = ( const Ref< TYPE >& tObject );
     const Ref< TYPE >& operator = ( CRefClass<TYPE>* pRefClass );
     TYPE operator->() const;
     TYPE GetEntityData() const;
-    void Destroy();
+    //void Destroy();
     void Attach( RefEntity< TYPE >& tNewReferenceObject );
     void Detach();
     bool IsAttached() const;
@@ -46,6 +47,22 @@ protected:
 };
 
 //////////////////////////////////////////////////////////////////////////
+template<class TYPE>
+class RefLinkList{
+public:
+    struct RefListNode{
+        RefListNode* m_pNext;
+        Ref<TYPE> m_sRefData;
+    };
+public:
+    RefLinkList();
+    ~RefLinkList();
+    void PushBack( TYPE sObject );
+    bool32 Remove( TYPE sObject );
+    void Clear();
+    RefListNode* m_pRoot;
+};
+
 
 
 template < class TYPE >
@@ -77,13 +94,27 @@ class CRefClass{
 public:
     CRefClass();
     virtual ~CRefClass();
-    //void SetData( TYPE _this );
 
-private:
+protected:
     RefEntity< TYPE > m_pReferenceObj;
     friend class Ref< TYPE >;
+    friend class RefLinkList<TYPE>;
+    friend class CGarbageCollection;
 };
 
+
+class CRefObject;
+void ___AddObjectToGC( CRefObject *pRefObj );
+
+class CRefObject: public CRefClass<CRefObject*>{
+public:
+    CRefObject(){
+        ___AddObjectToGC( this );
+    }
+    virtual ~CRefObject(){
+
+    }
+};
 
 ///////////////////////////////////////////////////////////////////////////////////
 template < class TYPE >
@@ -125,6 +156,13 @@ Ref<TYPE>::Ref( void* pRefClass ){
     Attach( _pRefClass->m_pReferenceObj );
 }
 template < class TYPE >
+Ref<TYPE>::Ref( const Ref< TYPE >& tObject ){
+    m_pReferenceObject = NULL;
+    m_pNextReference = NULL;
+    m_pPreviousReference = NULL;
+    if( tObject.IsAttached() ) Attach( *tObject.m_pReferenceObject );
+}
+template < class TYPE >
 Ref<TYPE>::~Ref(){
     Detach();
 }
@@ -152,11 +190,11 @@ TYPE Ref<TYPE>::GetEntityData() const{
     assert( _p );
     return _p;
 }
-template < class TYPE >
-void Ref<TYPE>::Destroy(){
-    TYPE _p = GetEntityData();
-    DELETE( _p );
-}
+//template < class TYPE >
+//void Ref<TYPE>::Destroy(){
+//    TYPE _p = GetEntityData();
+//    DELETE( _p );
+//}
 template < class TYPE >
 void Ref<TYPE>::Attach( RefEntity< TYPE >& tNewReferenceObject ){
     Detach();
@@ -176,6 +214,57 @@ template < class TYPE >
 bool Ref<TYPE>::IsAttached() const{
     return (m_pReferenceObject != NULL);
 }
+
+
+///////////////////////////////////////////////////////////////////////////////
+template < class TYPE >
+RefLinkList<TYPE>::RefLinkList(){
+    m_pRoot = NEW RefListNode();
+    m_pRoot->m_pNext = NULL;
+}
+template < class TYPE >
+RefLinkList<TYPE>::~RefLinkList(){
+    Clear();
+    DELETE( m_pRoot );
+}
+template < class TYPE >
+void RefLinkList<TYPE>::PushBack( TYPE sObject ){
+    RefListNode* _pNode = m_pRoot;
+    while( _pNode->m_pNext ){
+        _pNode = _pNode->m_pNext;
+    }
+    RefListNode* __pNode = NEW RefListNode();
+    __pNode->m_pNext = NULL;
+    __pNode->m_sRefData = sObject;
+    _pNode->m_pNext = __pNode;
+}
+template < class TYPE >
+bool32 RefLinkList<TYPE>::Remove( TYPE sObject ){
+    RefListNode* _pPrevNode = m_pRoot;
+    RefListNode* _pNode = m_pRoot->m_pNext;
+    while( _pNode ){
+        if( _pNode->m_sRefData.GetEntityData() == sObject ){
+            _pPrevNode->m_pNext = _pNode->m_pNext;
+            DELETE( _pNode );
+            return True;
+            break;
+        }
+        _pPrevNode = _pNode;
+        _pNode = _pNode->m_pNext;
+    }
+    return False;
+}
+template < class TYPE >
+void RefLinkList<TYPE>::Clear(){
+    RefListNode* _pNode = m_pRoot->m_pNext;
+    while( _pNode ){
+        RefListNode* __pNode = _pNode->m_pNext;
+        DELETE( _pNode );
+        _pNode = __pNode;
+    }
+    m_pRoot->m_pNext = NULL;
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 template < class TYPE >

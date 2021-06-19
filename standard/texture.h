@@ -52,7 +52,7 @@ enum ETextureFilters{
     LinearMipMapLinearFilter,
 };
 
-class CTexture: public CRefClass<CTexture*>{
+class CTexture: public CRefObject{
 public:
     CTexture();
     virtual ~CTexture();

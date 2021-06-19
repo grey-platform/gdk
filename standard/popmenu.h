@@ -29,7 +29,8 @@ struct SPopMenuInfo{
 class CPopMenu: public CPanel, public CUIEvent{
 public:
     static void SetMenuInfo( SPopMenuInfo* pMenuInfo, const char* strCaption, bool32 bEnable, int32 nID, int32 nCmd );
-    CPopMenu( int32 x, int32 y, CUIEvent* pEventObject, SPopMenuInfo* pMenuInfo, int32 nItemWidth = 100 );
+    static void OpenPopMenu( int32 x, int32 y, CUIEvent* pEventObject, SPopMenuInfo* pMenuInfo, int32 nItemWidth = 100 );
+    CPopMenu();
     virtual ~CPopMenu();
     void Init( int32 x, int32 y, SPopMenuInfo* pMenuInfo, int32 nItemWidth );
     
@@ -40,7 +41,7 @@ private:
 
     CUIEvent* m_pEventObject;
     CUIElement* m_pMenuPanel;
-    list<CButton*>m_vButtonList;
+
 };
 
 

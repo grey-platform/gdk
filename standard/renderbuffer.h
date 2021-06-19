@@ -28,7 +28,7 @@ void Vertex_Set(TV3C4FT2 *pVert, float x, float y, float z, float r, float g, fl
 
 
 class CVertexBuffer;
-class CIndexBuffer: public CRefClass<CIndexBuffer*>{
+class CIndexBuffer: public CRefObject{
 public:
     CIndexBuffer( void* pIndexData, int32 nCount, bool32 bDynamic, int32 nElementDataSize );
     ~CIndexBuffer();
@@ -38,7 +38,7 @@ public:
     HINDEXBUFFERHANDLE m_hIndexBufferHandle;
 };
 
-class CVertexBuffer: public CRefClass<CVertexBuffer*>{
+class CVertexBuffer: public CRefObject{
 public:
     CVertexBuffer( _EVERTEXTYPE eVertexType, void* pVertexData, int32 nVertexCount, bool32 bDynamic );
     ~CVertexBuffer();
@@ -51,7 +51,7 @@ public:
 };
 
 
-class CRenderDataBuffer: public CRefClass<CRenderDataBuffer*>{
+class CRenderDataBuffer: public CRefObject{
 public:
     CRenderDataBuffer();
     ~CRenderDataBuffer();
@@ -80,8 +80,8 @@ public:
     bool32 AddIndexData( int32* pData, int32 nCount );
 
 public:
-    CVertexBuffer* m_pVertexBuffer;
-    CIndexBuffer* m_pIndexBuffer;
+    Ref<CVertexBuffer*> m_pVertexBuffer;
+    Ref<CIndexBuffer*> m_pIndexBuffer;
 
     _EVERTEXTYPE m_eVertexType;
     vector<byte>m_vVertexData;

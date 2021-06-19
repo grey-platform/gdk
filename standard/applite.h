@@ -18,18 +18,21 @@
 #include <include/stdtype.h>
 #include <include/ui.h>
 #include <standard/reference.h>
+#include <standard/gui.h>
 
-class CAppLite: public CRefClass<CAppLite*>{
+class CAppLite{
 public:
-    static HUIHANDLE m_hRootHandle;
+    static Ref<CUIElement*> m_pUIRoot;
     static int32 m_nRootWidth;
     static int32 m_nRootHeight;
+    static void __finaly();
     CAppLite();
     virtual ~CAppLite();
-    virtual int32 Init( HUIHANDLE hParentHandle, int32 nWidth, int32 nHeight );
+    virtual CUIElement* Init( HUIHANDLE hParentHandle, int32 nWidth, int32 nHeight );
     virtual int32 Update( int32 nDelta, float fDelta );
     virtual int32 Render();
     virtual int32 Final();
+
     virtual int32 OnSystemCommand( int32 nCmd );
     virtual int32 Event( int32 nParam0, int32 nParam1, int32 nParam2, int32 nParam3, int32 nParam4, int32 nParam5, int32 nParam6, int32 nParam7, int32 nParam8, int32 nParam9 );
     virtual int32 HttpRequestEvent( int32 nParam0, int32 nParam1, int32 nParam2, int32 nParam3 );

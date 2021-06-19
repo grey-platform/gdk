@@ -27,11 +27,13 @@ public:
     CTaskManager();
     ~CTaskManager();
     void _AddTask( ITask *pTask );
+    void _RemoveTask( ITask* pTask );
     void Update( float fDelta );
     void OnMouseEvent( EUIMouseMessage eMouseMessage, int32 x, int32 y );
     void OnKeyEvent( EUIKeyMessage eKeyMessage, int32 nKey );
 
 private:
+    void Clear();
     list<ITask*> m_vTaskList;
 };
 

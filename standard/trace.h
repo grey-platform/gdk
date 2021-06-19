@@ -2,7 +2,7 @@
 #define __STANDARD_TRACE_H__
 
 
-#ifdef _APP_DEBUG_
+#if defined(_APP_DEBUG_ ) && !defined(__NOTRACE__)
 
 #include <include/stdtype.h>
 #include <standard/list.h>
@@ -23,6 +23,7 @@ struct STrackFuncInfo{
 
 class CGreyTrace{
 public:
+    static void Destroy();
     static void OutTrackState();
     static uint32 __HashString( const char* strText );
     static list<STrackInfo>* m_vTrackInfo;
@@ -39,6 +40,9 @@ private:
 #define TRACE CGreyTrace ___trace___info___( __FUNCTION__ )
 #define TRACESTR( s ) CGreyTrace ___trace___info___( s )
 #define TRACKOUT CGreyTrace::OutTrackState()
+#define TRACEDESTROY CGreyTrace::Destroy();
+
+#define TRACEENABLE 1
 
 #else
 
@@ -46,6 +50,9 @@ private:
 #define TRACESTR( s )
 #define SETTRACE( v )
 #define TRACKOUT
+#define TRACEDESTROY
+
+#define TRACEENABLE 0
 
 #endif
 

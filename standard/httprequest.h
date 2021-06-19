@@ -27,7 +27,7 @@ public:
     virtual void OnProcess( CHttpRequest* pHttpRequest, int32 nCur, int32 nMax );
 };
 
-class CHttpRequest: public CRefClass<CHttpRequest*>{
+class CHttpRequest: public CRefObject{
 public:
     CHttpRequest( const char* strHost, int32 nPort, const char* strAddress );
     virtual ~CHttpRequest();

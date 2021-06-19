@@ -17,8 +17,6 @@
 
 #include <include/stdtype.h>
 #include <include/ui.h>
-//#include <include/delegate.h>
-//#include <standard/delegate.h>
 #include <standard/reference.h>
 #include <standard/texture.h>
 #include <standard/list.h>
@@ -283,7 +281,7 @@ public:
 };
 
 
-class CUIElement: public CRefClass<CUIElement*>{
+class CUIElement: public CRefObject{
 public:
     static int32 LoadUIFormFile( const char* strFileName, CUIElement* pParent, list<CUIElement*>*pParentElementList );
     CUIElement();
@@ -344,8 +342,14 @@ public:
     int32 m_nGUID;
 
 protected:
+    void DestroyChild();
+
     HUIHANDLE m_hHandle;
     int32 m_nUserData[4];
+    Ref<CTexture*>m_vTextureRef;
+    Ref<CUIElement*> m_pParent;
+    RefLinkList<CUIElement*>m_vChild;
+    //list<Ref<CUIElement*>> m_vChild;
 
 };
 
@@ -400,6 +404,7 @@ public:
     void SetImage( const char* strFileName );
     CUIEvent* OnMouseEventObject;
     CUIEvent* OnKeyEventObject;
+
 };
 
 class CListView: public CUIElement{
