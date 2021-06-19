@@ -23,6 +23,8 @@ public:
     CDialog();
     virtual ~CDialog();
     virtual void Close();
+protected:
+    int32 m_nClientWidth, m_nClientHeight;
 };
 
 class CMessageBox: public CDialog{
