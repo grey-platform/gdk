@@ -19,12 +19,23 @@
 #include <standard/task.h>
 #include <standard/list.h>
 
-class CToast: public CTranslateNode, public ITask{
+class CToast: public CTranslateNode{
+public:
+    class CToastTask: public ITask{
+    public:
+        CToastTask( CToast* pToast );
+        virtual ~CToastTask();
+        virtual int32 UpdateTask( float fDelta );
+
+    private:
+        CToast* m_pToast;
+    };
+
 public:
     CToast( float x, float y );
     virtual ~CToast();
-    virtual void Close();
-    virtual int32 UpdateTask( float fDelta );
+    void Close();
+    virtual int32 UpdateToast( float fDelta );
 
 protected:
     void UpdatePos( float x, float y );
@@ -36,9 +47,8 @@ class CMessageToast: public CToast{
 public:
     CMessageToast( int32 x, int32 y, const char* strText );
     virtual ~CMessageToast();
-    virtual void Close();
-    virtual int32 UpdateTask( float fDelta );
-
+   // virtual int32 UpdateTask( float fDelta );
+    virtual int32 UpdateToast( float fDelta );
 private:
     void UpdatePos( float fDelta );
     CLable* m_pTextLB;

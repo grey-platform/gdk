@@ -35,6 +35,7 @@ public:
     static void Destroy();
     CResourceManager();
     ~CResourceManager();
+    void Clear();
     int32 RemoveObject( CRefObject* pObj );
     int32 RemoveObject( uint32 nGUID );
     CTexture* GetTexture( const char* strFileName, ETextureWrapModes eWrapS = RepeatWrapping, ETextureWrapModes eWrapT = RepeatWrapping, ETextureFilters eMagFilter = LinearFilter, ETextureFilters eMinFilter = LinearFilter, bool32 bGenerateMipmaps = False );
@@ -47,6 +48,9 @@ private:
     map<uint32, SResourceItem>m_vResourceList;
     uint32 m_nResourceGUID;
 };
+
+#define RESOURCE_ADD( p )CResourceManager::GetInterface()->AddObject( p );
+#define RESOURCE_REMOVE( p )CResourceManager::GetInterface()->RemoveObject( p ); p = NULL;
 
 
 template <class T>

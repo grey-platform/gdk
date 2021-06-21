@@ -80,8 +80,8 @@ public:
     bool32 AddIndexData( int32* pData, int32 nCount );
 
 public:
-    Ref<CVertexBuffer*> m_pVertexBuffer;
-    Ref<CIndexBuffer*> m_pIndexBuffer;
+    CVertexBuffer* m_pVertexBuffer;
+    CIndexBuffer* m_pIndexBuffer;
 
     _EVERTEXTYPE m_eVertexType;
     vector<byte>m_vVertexData;
