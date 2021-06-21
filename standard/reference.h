@@ -97,9 +97,13 @@ public:
 
 protected:
     RefEntity< TYPE > m_pReferenceObj;
+
+private:
+    uint32 m_nResGUID;
     friend class Ref< TYPE >;
     friend class RefLinkList<TYPE>;
     friend class CGarbageCollection;
+    friend class CResourceManager;
 };
 
 
@@ -366,7 +370,7 @@ void RefEntity<TYPE>::Remove( Ref< TYPE >* pReference ){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 template < class TYPE >
-CRefClass<TYPE>::CRefClass():m_pReferenceObj( (TYPE)this ){
+CRefClass<TYPE>::CRefClass():m_pReferenceObj( (TYPE)this ), m_nResGUID(0){
 }
 
 template < class TYPE >

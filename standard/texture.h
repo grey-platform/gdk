@@ -64,7 +64,6 @@ public:
     HTEXTUREHANDLE m_hTextureHandle;
     int32 m_nWidth;
     int32 m_nHeight;
-    int32 m_nRefCount;
 };
 
 
