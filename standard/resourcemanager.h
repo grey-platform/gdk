@@ -50,6 +50,7 @@ private:
 };
 
 #define RESOURCE_ADD( p )CResourceManager::GetInterface()->AddObject( p );
+#define RESOURCE_GETTEXTURE( file )CResourceManager::GetInterface()->GetTexture( file );
 #define RESOURCE_REMOVE( p )CResourceManager::GetInterface()->RemoveObject( p ); p = NULL;
 
 

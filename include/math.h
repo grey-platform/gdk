@@ -16,6 +16,7 @@
 
 #include <include/stdtype.h>
 
+
 #define acos ___acos___
 #define asin ___asin___
 #define atan ___atan___
