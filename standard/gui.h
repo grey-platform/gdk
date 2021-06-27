@@ -314,6 +314,7 @@ public:
     void SetZOrder( int32 nValue );
     CUIElement* GetChildForID( int32 nID );
     CUIElement* GetParent();
+    RefLinkList<CUIElement*>::RefListNode* GetChildFirstNode();
     //event Process
     virtual int32 ProcessClickEvent();
     virtual int32 ProcessTextEditEvent( int32 nStrFarAddress );
@@ -552,6 +553,14 @@ public:
     int32 GetSelect();
     CUIEvent* OnSelectEventObject;
 };
+
+//class CScrollBar: public CUIElement{
+//public:
+//    CScrollBar( int32 x, int32 y, int32 width, int32 height );
+//    virtual ~CScrollBar();
+//    void SetRange(int32 nValue);
+//    void SetValue(int32 nValue);
+//};
 
 
 
