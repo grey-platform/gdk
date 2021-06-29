@@ -121,6 +121,11 @@ inline T Pow( const T& a, int32 nPower ){
     return Ret;
 }
 
+inline bool FloatIsEqual(float x, float y){
+    const float epsilon = 0.00001f;
+    return Abs(x - y) <= epsilon * Abs(x);
+}
+
 
 float LinerInterpolate(const float r, const float v1, const float v2);
 float HermiteInterpolate(const float r, const float &v1, const float &v2, const float&in, const float &out);
