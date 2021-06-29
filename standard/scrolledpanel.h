@@ -33,19 +33,21 @@ private:
     int32 m_vBound[4];
     int32 m_nScorllLength;
     int32 m_nScrollValue;
+    int32 m_nScrollStep;
     CButton* m_pUpBtn;
     CButton* m_pDownBtn;
     CPanel* m_pSliderBtn;
 
 };
 
-class CScrolledPanel: public CTranslatePanel{
+class CScrolledPanel: public CTranslatePanel, public CUIEvent{
 public:
     CScrolledPanel(int32 x, int32 y, int32 width, int32 height);
     virtual ~CScrolledPanel();
     virtual void AddElement(CUIElement* pElement);
     void SetContainerSize(int32 nContainerWidth, int32 nContainerHeight);
 private:
+    virtual void OnMouseEvent(CUIElement* pSelf, EUIMouseMessage eMouseMessage, int32 x, int32 y, int32 z, int32 s);
     void MoveComponentOffset(CUIElement* p, int32 x, int32 y);
     void OnScrollValue(CScrollBar* pSelf, int32 nValue, int32 nOffset );
     CPanel* m_pRootNode;
