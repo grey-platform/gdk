@@ -26,7 +26,7 @@ protected:
         int32 m_nDataIndex;         //数据编号
         int32 m_nListIndex;         //在list中的序号
         int32 m_nPos;               //cell当前的X坐标
-        CPanel* m_pLayout;          //cell面片
+        CTranslatePanel* m_pLayout;          //cell面片
     };
 public:
     CHorizontalListView(int x, int y, int w, int h );
@@ -44,7 +44,7 @@ private:
     //virtual bool onTouchBegan(Touch* pTouch, Event* pEvent) override;
     //virtual void onTouchMoved(Touch* pTouch, Event* pEvent) override;
     //virtual void onTouchEnded(Touch* pTouch, Event* pEvent) override;
-    virtual void update(float fDelta);
+    //virtual void update(float fDelta);
     void UpdatePos(float fDelta);
     SListViewSubItem* GetLayoutPool();
 
@@ -82,17 +82,6 @@ private:
 template<class T>
 class CHorizontalListViewInst:public CHorizontalListView{
 public:
-    ////static CHorizontalListViewInst<T>* create(int x, int y, int w, int h){
-    ////    auto pLayer = new CHorizontalListViewInst<T>(x, y, w, h, mouseProtocol);
-    ////    if( pLayer && pLayer->init() ){
-    ////        pLayer->autorelease();
-    ////        return pLayer;
-    ////    }         else{
-    ////        CC_SAFE_DELETE(pLayer);
-    ////        return NULL;
-    ////    }
-    ////}
-
     CHorizontalListViewInst(int x, int y, int w, int h):CHorizontalListView(x, y, w, h){ Init(); }
 
     virtual ~CHorizontalListViewInst(){}
@@ -110,9 +99,8 @@ public:
         InitData(_nDataCount);
     }
 
-
-    std::function<void(Layout*)> m_funcInitSubItem;
-    std::function<void(Layout*, T)> m_funcUpdateSubItem;
+    CDelegate1<CUIElement* >m_funcInitSubItem;
+    CDelegate2<CUIElement*, T >m_funcUpdateSubItem;
 
 private:
     vector<T> m_vData;

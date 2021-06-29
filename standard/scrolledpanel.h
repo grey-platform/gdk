@@ -40,7 +40,7 @@ private:
 
 };
 
-class CScrolledPanel: public CTranslatePanel, public CUIEvent{
+class CScrolledPanel: public CTranslatePanel, public CUIEvent, public IDelegateInterface{
 public:
     CScrolledPanel(int32 x, int32 y, int32 width, int32 height);
     virtual ~CScrolledPanel();
