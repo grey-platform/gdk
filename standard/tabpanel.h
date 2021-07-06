@@ -20,7 +20,7 @@
 
 class CTabPanel: public CTranslatePanel, public CUIEvent{
 public:
-    CTabPanel( int32 x, int32 y, int32 width, int32 height, char** ppCaption, int32 nButtonWidth );
+    CTabPanel( int32 x, int32 y, int32 width, int32 height, char** ppCaption, int32 nButtonWidth, int32 nButtonHeight );
     virtual ~CTabPanel();
     //CPanel* AddTabPage( const char* strCaption );
     CScrolledPanel* GetTabPage( int32 nIndex );

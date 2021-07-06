@@ -17,14 +17,18 @@
 
 #include <standard/gui.h>
 
+#define POPMENUITEMHEIGHT (26)
+
 struct SPopMenuInfo{
     char m_strCaption[64];
     bool32 m_bEnable;
     int32 m_nID;
-    int32 m_nUserData;
-    int32 m_nLevel;
-
+    int32 m_nUserData0;
+    int32 m_nUserData1;
+    int32 m_nUserData2;
+    int32 m_nUserData3;
 };
+
 
 class CPopMenu: public CPanel, public CUIEvent{
 public:
@@ -40,7 +44,7 @@ private:
     void Close();
 
     CUIEvent* m_pEventObject;
-    CUIElement* m_pMenuPanel;
+    CPanel* m_pMenuPanel;
 
 };
 

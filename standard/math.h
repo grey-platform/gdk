@@ -171,4 +171,6 @@ float ColourDistance( byte e1[3], byte e2[3] );
 bool IsPowerOfTwo( int32 val );
 int32 FindPowerOfTwo( int32 value );
 
+uint32 ColorBlend( uint32 c1, uint32 c2 );
+
 #endif
