@@ -54,6 +54,11 @@ typedef int intptr_t;
 typedef unsigned char bool;
 #define false 0
 #define true 1
+#else
+#ifndef wchar_t
+#define wchar_t unsigned short
+//typedef unsigned short wchar_t;
+#endif
 #endif
 #endif
 
