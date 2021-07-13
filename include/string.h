@@ -42,6 +42,7 @@
 #define strtol ___strtol___
 #define strtoul ___strtoul___
 #define strxfrm ___strxfrm___
+#define strncasecmp ___strncasecmp___
 
 
 EXTERN void * ___memchr___( const void *buffer, int ch, int count );
@@ -69,6 +70,7 @@ EXTERN char *___strtok___( char *str1, const char *str2 );
 EXTERN long ___strtol___( const char *start, char **end, int base );
 EXTERN unsigned long ___strtoul___( const char *start, char **end, int base );
 EXTERN int ___strxfrm___( char *str1, const char *str2, int num );
+EXTERN int ___strncasecmp___(const char* s1, const char* s2, int count );
 
 
 #endif

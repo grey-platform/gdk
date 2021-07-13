@@ -165,6 +165,7 @@ def ___strtok___
 def ___strtol___
 def ___strtoul___
 def ___strxfrm___
+def ___strncasecmp___
 def ___asctime___           ;time.h
 def ___clock___
 def ___ctime___
@@ -394,3 +395,4 @@ def __dl__FPv
 def __pure_virtual_called
 def __vec_new
 def __vec_delete
+
