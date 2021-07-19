@@ -12,28 +12,55 @@
 **********************************************************************************/
 
 
-#ifndef __STANDARD_CSV_H__
-#define __STANDARD_CSV_H__
+#ifndef __STANDARD_CSVLIB_H__
+#define __STANDARD_CSVLIB_H__
 
 #include <include/stdtype.h>
+#include <include/stdio.h>
 
-class CCsv{
+class CCSV{
 public:
-    CCsv( const char* strText, int32 nSize );
-    bool32 End();
-    char* GetString();
-    int32 GetInteger();
-    float GetFloat();
-    void Skip();
+    CCSV();
+    ~CCSV();
+    char* Init(const char* strText);
+    void Close();
+    int32 GetCol();
+    int32 GetRow();
+    char* GetNextRow(char* strCode);
+    const char* GetRowItem(int32 i);
+    int32 GetRowItemInteger(int32 i);
+    float GetRowItemFloat(int32 i);
 
 private:
-    char* GetNextToken();
-    const char* m_strText;
-    int32 m_nSize;
-    char* m_strCurText;
-    char m_strTokenBuff[ 1024 ];
+    int _GetRowLine(char* strCode);
+    int _Split(char* sLine);
+    char* _Advquoted(char* p);
+    bool32 _GetColRowCount(char* strCode);
+    int32 m_nCol;
+    int32 m_nRow;
+    char** m_vTextField;
 };
 
+
+//≤‚ ‘”√¿˝
+////int32 _nSize = 0;
+////char* _strTextContent = (char*)GetAssetFileData("city.csv", &_nSize, NULL);
+////CCsvLib _sCsvLib;
+////char* _strCode = _strTextContent;
+////char* __str = _sCsvLib.Init(_strCode);
+////if( __str ){
+////	__str = _sCsvLib.GetNextRow(__str);
+////	while( __str ){
+////		for( int32 i = 0, n = _sCsvLib.GetCol(); i < n; i++ ){
+////			const char* _strText = _sCsvLib.GetRowItem(i);
+////			printf("%s ", _strText);
+////		}
+////		printf("\n");
+////		__str = _sCsvLib.GetNextRow(__str);
+////	}
+////}
+////_sCsvLib.Close();
+////FREE(_strTextContent);
 
 
 #endif
