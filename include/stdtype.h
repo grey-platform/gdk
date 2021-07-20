@@ -50,14 +50,21 @@ typedef int intptr_t;
 #define True  1
 
 #ifdef CPLUS
+
+
 #ifndef _APP_DEBUG_
 typedef unsigned char bool;
 #define false 0
 #define true 1
+
+//#ifndef wchar_t
+//#define wchar_t unsigned short
+//#endif
+typedef unsigned short wchar_t;
+
 #else
 #ifndef wchar_t
 #define wchar_t unsigned short
-//typedef unsigned short wchar_t;
 #endif
 #endif
 #endif

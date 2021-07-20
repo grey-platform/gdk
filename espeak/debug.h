@@ -13,11 +13,11 @@ extern void debug_time(const char* text);
 
 #else
 
-#ifdef NO_VARIADIC_MACROS
-#define SHOW(format)   // VC6 doesn't allow "..."
-#else
-#define SHOW(format,...)
-#endif
+//#ifdef NO_VARIADIC_MACROS
+//#define SHOW(format)   // VC6 doesn't allow "..."
+//#else
+//#define SHOW(format,...)
+//#endif
 #define SHOW_TIME(text)
 #define ENTER(text)
 #endif
