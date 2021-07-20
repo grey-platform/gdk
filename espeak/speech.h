@@ -32,7 +32,7 @@
 //#define NEED_GETOPT
 //#define USE_MBROLA_LIB
 
-#define PATHSEP '\\'
+#define PATHSEP '/'
 //#define USE_PORTAUDIO
 //#define NO_VARIADIC_MACROS
 //#define INCLUDE_KLATT
