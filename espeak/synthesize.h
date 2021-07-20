@@ -163,12 +163,19 @@ int amplitude_fmt;   // percentage amplitude adjustment for formant synthesis
 } WGEN_DATA;
 
 
-typedef struct {
-	double a;
-	double b;
-	double c;
-	double x1;
-	double x2;
+//typedef struct {
+//	double a;
+//	double b;
+//	double c;
+//	double x1;
+//	double x2;
+//}  RESONATOR;
+typedef struct{
+	float a;
+	float b;
+	float c;
+	float x1;
+	float x2;
 }  RESONATOR;
 
 
@@ -539,8 +546,8 @@ int CompileDictionary(const char *dsource, const char *dict_name, _FILE *log, ch
 
 
 #define ENV_LEN  128    // length of pitch envelopes
-#define    PITCHfall   0  // standard pitch envelopes
-#define    PITCHrise   2
+#define PITCHfall   0  // standard pitch envelopes
+#define PITCHrise   2
 #define N_ENVELOPE_DATA   20
 extern unsigned char *envelope_data[N_ENVELOPE_DATA];
 
@@ -558,7 +565,7 @@ extern t_espeak_callback* synth_callback;
 extern int option_log_frames;
 extern const char *version_string;
 extern const int version_phdata;
-extern double sonicSpeed;
+//extern double sonicSpeed;
 
 #define N_SOUNDICON_TAB  80   // total entries in soundicon_tab
 #define N_SOUNDICON_SLOTS 4    // number of slots reserved for dynamic loading of audio files

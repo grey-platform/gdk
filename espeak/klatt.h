@@ -17,17 +17,27 @@ typedef int flag;
 
 /* Resonator Structure */
 
-typedef struct
-{
-	double a;
-	double b;
-	double c;
-	double p1;
-	double p2;
-	double a_inc;
-	double b_inc;
-	double c_inc;
-} resonator_t, *resonator_ptr;
+////typedef struct
+////{
+////	double a;
+////	double b;
+////	double c;
+////	double p1;
+////	double p2;
+////	double a_inc;
+////	double b_inc;
+////	double c_inc;
+////} resonator_t, *resonator_ptr;
+typedef struct{
+	float a;
+	float b;
+	float c;
+	float p1;
+	float p2;
+	float a_inc;
+	float b_inc;
+	float c_inc;
+} resonator_t, * resonator_ptr;
 
 /* Structure for Klatt Globals */
 
@@ -47,21 +57,35 @@ typedef struct
   int nopen;       /* Number of samples in open phase of period    */
   int nmod;        /* Position in period to begin noise amp. modul */
   int nrand;       /* Varible used by random number generator      */
-  double pulse_shape_a;  /* Makes waveshape of glottal pulse when open   */
-  double pulse_shape_b;  /* Makes waveshape of glottal pulse when open   */
-  double minus_pi_t;
-  double two_pi_t;
-  double onemd;
-  double decay;
-  double amp_bypas; /* AB converted to linear gain              */
-  double amp_voice; /* AVdb converted to linear gain            */
-  double par_amp_voice; /* AVpdb converted to linear gain       */
-  double amp_aspir; /* AP converted to linear gain              */
-  double amp_frica; /* AF converted to linear gain              */
-  double amp_breth; /* ATURB converted to linear gain           */
-  double amp_gain0; /* G0 converted to linear gain              */
+  //double pulse_shape_a;  /* Makes waveshape of glottal pulse when open   */
+  //double pulse_shape_b;  /* Makes waveshape of glottal pulse when open   */
+  //double minus_pi_t;
+  //double two_pi_t;
+  //double onemd;
+  //double decay;
+  //double amp_bypas; /* AB converted to linear gain              */
+  //double amp_voice; /* AVdb converted to linear gain            */
+  //double par_amp_voice; /* AVpdb converted to linear gain       */
+  //double amp_aspir; /* AP converted to linear gain              */
+  //double amp_frica; /* AF converted to linear gain              */
+  //double amp_breth; /* ATURB converted to linear gain           */
+  //double amp_gain0; /* G0 converted to linear gain              */
+  float pulse_shape_a;  /* Makes waveshape of glottal pulse when open   */
+  float pulse_shape_b;  /* Makes waveshape of glottal pulse when open   */
+  float minus_pi_t;
+  float two_pi_t;
+  float onemd;
+  float decay;
+  float amp_bypas; /* AB converted to linear gain              */
+  float amp_voice; /* AVdb converted to linear gain            */
+  float par_amp_voice; /* AVpdb converted to linear gain       */
+  float amp_aspir; /* AP converted to linear gain              */
+  float amp_frica; /* AF converted to linear gain              */
+  float amp_breth; /* ATURB converted to linear gain           */
+  float amp_gain0; /* G0 converted to linear gain              */
   int num_samples; /* number of glottal samples */
-  double sample_factor; /* multiplication factor for glottal samples */
+  //double sample_factor; /* multiplication factor for glottal samples */
+  float sample_factor; /* multiplication factor for glottal samples */
   short *natural_samples; /* pointer to an array of glottal samples */
   int original_f0; /* original value of f0 not modified by flutter */
 
