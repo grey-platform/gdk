@@ -44,11 +44,11 @@
 
 typedef unsigned short USHORT;
 typedef unsigned char  UCHAR;
-typedef double DOUBLEX;
+typedef float DOUBLEX;
 //#ifdef __WIN64__
 //typedef uint64_t long64;  // use this for conversion between pointers and integers
 //#else
-typedef unsigned long long64;
+typedef unsigned int long64;
 //#endif
 
 
