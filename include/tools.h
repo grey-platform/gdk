@@ -39,8 +39,8 @@ EXTERN HTTPHANDLE HttpRequest( uint32 ID, const char* strHost, int32 nPort, cons
 EXTERN char** GetFileList( const char* strFindDirName, int32* nCount );
 EXTERN void MakeMD532( void* pData, int32 nSize, char* pMD5Code_ );
 EXTERN void MakeMD516( void* pData, int32 nSize, byte* pMD5Code_ );
-EXTERN int32 ConvertUTF8ToGB2312( char* strDest, int32 nDestSize, char* strSrc, int32 nSrcSize );
-EXTERN int32 ConvertGB2312ToUTF8( char* strDest, int32 nDestSize, char* strSrc, int32 nSrcSize );
+EXTERN int32 ConvertUTF8ToGBK( char* strDest, int32 nDestSize, char* strSrc, int32 nSrcSize );
+EXTERN int32 ConvertGBKToUTF8( char* strDest, int32 nDestSize, char* strSrc, int32 nSrcSize );
 EXTERN int32 UnCompressData( void* pSrc, int32 nSrcData, void* pDestBuff, int32 nDestBuffSize, byte* pProp );
 EXTERN int32 SYSTEM_SetFarData( int32 nFarDataAddress, void* pData, int32 nSize );
 EXTERN REMOTEFILEHANDLE GetRemoteFile( uint32 ID, const char* strURL, void* pBuff, int32 nBuffSize );

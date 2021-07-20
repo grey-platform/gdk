@@ -3,8 +3,10 @@
 
 #include <include/stdtype.h>
 
+//代理类必须要第一个继承 否则会出问题
 class IDelegateInterface{
 public:
+    virtual ~IDelegateInterface(){}
 };
 
 template<class TP1>

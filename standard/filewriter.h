@@ -16,6 +16,24 @@
 #define __STANDARD_FILEWRITER_H__
 
 #include <include/stdio.h>
+#include <standard/vector.h>
+
+class CMemFile{
+public:
+    CMemFile();
+    ~CMemFile();
+    void Write(void* p, int32 nSize);
+    void SetPos(int32 nPos);
+    int32 GetPos();
+    int32 GetSize();
+    byte* GetData();
+
+private:
+    vector<byte>m_vData;
+    int32 m_nPos;
+};
+
+
 
 class CFileWriter{
 public:

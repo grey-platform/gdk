@@ -35,6 +35,7 @@ public:
     void SetParent(CUIElement* pElement, int32 x, int32 y, int32 w, int32 h);
     bool32 AddLayout( CLayout* pLayout, int32 nGUID);
     bool32 Show( int32 nGUID );
+    CLayout* GetLayout( int32 nGUID );
 
 private:
     map< int32, CLayout*> m_vLayoutList;

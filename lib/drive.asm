@@ -384,8 +384,8 @@ def HttpRequest
 def GetFileList
 def MakeMD532
 def MakeMD516
-def ConvertUTF8ToGB2312
-def ConvertGB2312ToUTF8
+def ConvertUTF8ToGBK
+def ConvertGBKToUTF8
 def UnCompressData
 def SYSTEM_SetFarData
 def GetRemoteFile
