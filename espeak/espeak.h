@@ -4,6 +4,8 @@
 #include <include/stdtype.h>
 #include <espeak/speak_lib.h>
 #include <standard/vector.h>
+#include <standard/list.h>
+#include <standard/string.h>
 #include <standard/filewriter.h>
 #include <include/sound.h>
 
@@ -17,6 +19,7 @@ public:
     bool32 Init( const char* strSpeakFilePath );
     bool32 Final();
     bool32 SpeakText( const char* strText );
+    bool32 AddSpeakText( const char* strText );
     bool32 Stop();
 	bool32 CheckSoundEvent(int32 nParame0, int32 nParame1);
 
@@ -28,6 +31,9 @@ private:
     int32 m_samplerate;
 	char m_strUTF8TextBuff[1024];
 	HSOUNDHANDLE m_hHandle;
+
+    list<string>m_vSpeakTextQuene;
+
 };
 
 
