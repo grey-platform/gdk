@@ -27,8 +27,8 @@ public:
     virtual void Init();
     virtual void Begin();
     virtual void End();
+    virtual void SetDiffuseTexture(CTexture* pTexture);
     void RenderText( float x, float y, const char* strText, color32 c, int32 nStyle, color32 bk );
-    void SetDiffuseTexture( CTexture* pTexture );
     void SetTexture( CTexture* pTexture );
     void SetPosition( float x, float y, float z );
     void SetColor( float r, float g, float b, float a );

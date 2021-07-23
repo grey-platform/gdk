@@ -16,7 +16,6 @@
 #define __STANDARD_FLATMATERIAL_H__
 
 #include <standard/material.h>
-#include <standard/texture.h>
 #include <include/math.h>
 
 class CFlatMaterial: public CMaterial{
@@ -27,7 +26,6 @@ public:
     virtual void Begin();
     virtual void End();
     void RenderText( float x, float y, const char* strText, color32 c, int32 nStyle, color32 bk );
-    void SetDiffuseTexture( CTexture* pTexture );
 
 private:
 

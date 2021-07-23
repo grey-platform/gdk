@@ -19,15 +19,18 @@
 #include <standard/task.h>
 #include <standard/delegate.h>
 
+
+struct SListViewSubItem{
+    bool32 m_bUsed;             //是否使用
+    int32 m_nDataIndex;         //数据编号
+    int32 m_nListIndex;         //在list中的序号
+    int32 m_nPos;               //cell当前的X坐标
+    CTranslatePanel* m_pLayout;          //cell面片
+};
+
 class CHorizontalListView: public CPanel, public CUIEvent, public ITask{
 protected:
-    struct SListViewSubItem{
-        bool32 m_bUsed;             //是否使用
-        int32 m_nDataIndex;         //数据编号
-        int32 m_nListIndex;         //在list中的序号
-        int32 m_nPos;               //cell当前的X坐标
-        CTranslatePanel* m_pLayout;          //cell面片
-    };
+
 public:
     CHorizontalListView(int x, int y, int w, int h );
     virtual ~CHorizontalListView();
@@ -65,13 +68,13 @@ private:
     float m_fMovDis;
 
     //cell超出view该距离会被自动清除
-    static const int m_nSizeOffset = 10;
+    int m_nSizeOffset;
     //拖动速度参数,用于调整拖动速度
-    static const int m_dragMoveScale = 20;
+    int m_dragMoveScale;
     //各个cell间距
-    static const int m_cellSpace = 10;
+    int m_cellSpace;
     //数据条数    
-    int32 m_nDataCount = 0;
+    int32 m_nDataCount;
     int32 m_nDataBeginIndex;
 
 };

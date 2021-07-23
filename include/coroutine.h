@@ -195,7 +195,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 #define TASKBEGIN() PT_BEGIN( pt1 )
-#define TASKEND() PT_END(pt1)
+#define TASKEND() PT_END(pt1); return 0
 #define SLEEP( n ) \
     m_tCoroTimer = clock() + n;\
     PT_WAIT_UNTIL(pt1, (clock() >= m_tCoroTimer), __LINE__ );
@@ -215,31 +215,31 @@
 
 //////////////////////////////////////////////////////////////////////////////////
 //COROFUNC
-
-#define COROFUNCNAME() __pt_##FUNCNAME__
-#define COROFUNCTIMENAME() __pt_##FUNCNAME__time__
-
-#define COROFUNCYIELD() PT_YIELD( COROFUNCNAME(), __LINE__ );
-#define COROFUNCSLEEP( n ) \
-COROFUNCTIMENAME() = clock() + n;\
-PT_WAIT_UNTIL(COROFUNCNAME(), (clock() >= COROFUNCTIMENAME()), __LINE__ );
-
-#define COROFUNCBEGIN( a, b, c, d )\
-int32 FUNCNAME( int32 nDelta, float fDelta, a, b, c, d ){ \
-static int32 COROFUNCNAME() = 0;
-static int32 COROFUNCTIMENAME() = 0;
-    
-
-#define COROFUNCEND() PT_END(COROFUNCNAME()); }
-
-#define COROFUNCCALL( FuncName, a, b, c, d ) PT_WAIT_WHILE( COROFUNCNAME(),  FuncName( nDelta, fDelta, a, b, c, d ) != PT_ENDED, __LINE__ );
-
-#define COROFUNCDECLAR( FuncName, a, b, c, d ) int32 FuncName( int32 nDelta, float fDelta, a, b, c, d );
-
-#define COROFUNCS() PT_BEGIN( COROFUNCNAME() );
-
-
-#define COROFUNCRETURN() PT_EXIT(COROFUNCNAME());
+//////////////////////
+//////////////////////#define COROFUNCNAME() __pt_##FUNCNAME__
+//////////////////////#define COROFUNCTIMENAME() __pt_##FUNCNAME__time__
+//////////////////////
+//////////////////////#define COROFUNCYIELD() PT_YIELD( COROFUNCNAME(), __LINE__ );
+//////////////////////#define COROFUNCSLEEP( n ) \
+//////////////////////COROFUNCTIMENAME() = clock() + n;\
+//////////////////////PT_WAIT_UNTIL(COROFUNCNAME(), (clock() >= COROFUNCTIMENAME()), __LINE__ );
+//////////////////////
+//////////////////////#define COROFUNCBEGIN( a, b, c, d )\
+//////////////////////int32 FUNCNAME( int32 nDelta, float fDelta, a, b, c, d ){ \
+//////////////////////static int32 COROFUNCNAME() = 0;
+//////////////////////static int32 COROFUNCTIMENAME() = 0;
+//////////////////////    
+//////////////////////
+//////////////////////#define COROFUNCEND() PT_END(COROFUNCNAME()); }
+//////////////////////
+//////////////////////#define COROFUNCCALL( FuncName, a, b, c, d ) PT_WAIT_WHILE( COROFUNCNAME(),  FuncName( nDelta, fDelta, a, b, c, d ) != PT_ENDED, __LINE__ );
+//////////////////////
+//////////////////////#define COROFUNCDECLAR( FuncName, a, b, c, d ) int32 FuncName( int32 nDelta, float fDelta, a, b, c, d );
+//////////////////////
+//////////////////////#define COROFUNCS() PT_BEGIN( COROFUNCNAME() );
+//////////////////////
+//////////////////////
+//////////////////////#define COROFUNCRETURN() PT_EXIT(COROFUNCNAME());
 
 //#define COROFUNCTRACENAMEVALUE( s ) printf("coro name:%s value: %d\n", #s, COROFUNCNAME() );
 

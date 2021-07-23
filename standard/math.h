@@ -65,34 +65,34 @@ int32* RandArray( int32 *pArray, int32 nCount );
 
 
 template<class T>
-inline const T& Min( const T& a, const T& b ){
-    const T &r = a < b ? a : b;
+inline const T Min( const T a, const T b ){
+    const T r = a < b ? a : b;
     return r;
 }
 
 template<class T>
-inline const T& Min( const T& a, const T& b, const T& c ){
+inline const T Min( const T a, const T b, const T c ){
     return a < b ? Min( a, c ) : Min( b, c );
 }
 
 template<class T>
-inline const T& Max( const T& a, const T& b ){
-    const T &r = a < b ? b : a;
+inline const T Max( const T a, const T b ){
+    const T r = a < b ? b : a;
     return r;
 }
 
 template<class T>
-inline const T& Max( const T& a, const T& b, const T& c ){
+inline const T Max( const T a, const T b, const T c ){
     return a < b ? Max( b, c ) : Max( a, c );
 }
 
 template<class T>
-inline T Abs( const T& a ){
+inline T Abs( const T a ){
     return a < (T)0 ? -a : a;
 }
 
 template<class T>
-inline int32 Sign( const T& a ){
+inline int32 Sign( const T a ){
     return a > 0.0 ? 1 : (a < 0.0 ? -1 : 0);
 }
 
@@ -123,7 +123,8 @@ inline T Pow( const T& a, int32 nPower ){
 
 inline bool FloatIsEqual(float x, float y){
     const float epsilon = 0.00001f;
-    return Abs(x - y) <= epsilon * Abs(x);
+    float _delta = x - y;
+    return Abs(_delta) <= epsilon * Abs(x);
 }
 
 

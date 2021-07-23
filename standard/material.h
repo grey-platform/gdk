@@ -48,8 +48,7 @@ public:
     virtual void End();
     virtual void Final();
     virtual void SetDiffuseTexture(CTexture* pTexture);
-//    virtual void SetDiffuseTexture( int32 nID, CTexture* pTexture);
-    virtual void SetDiffuseTexture(int32 nID, HTEXTUREHANDLE hTextureHandle);
+    //virtual void SetDiffuseTexture(int32 nID, HTEXTUREHANDLE hTextureHandle);
 
     virtual void SetProjectionMatrix(Matrix4 pMatrix);          //设置投影矩阵
     virtual void SetViewMatrix(Matrix4 pMatrix);                //设置视口矩阵

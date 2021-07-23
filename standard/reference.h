@@ -251,7 +251,6 @@ bool32 RefLinkList<TYPE>::Remove( TYPE sObject ){
             _pPrevNode->m_pNext = _pNode->m_pNext;
             DELETE( _pNode );
             return True;
-            break;
         }
         _pPrevNode = _pNode;
         _pNode = _pNode->m_pNext;

@@ -24,12 +24,14 @@ class CIndexBuffer;
 class CVertexBuffer;
 class CRenderDataBuffer;
 
+struct SResourceItem{
+    Ref<CRefObject*> m_sItemsData;
+    int32 m_nRefCount;
+};
+
 class CResourceManager{
 private:
-    struct SResourceItem{
-        Ref<CRefObject*> m_sItemsData;
-        int32 m_nRefCount;
-    };
+
 public:
     static CResourceManager* GetInterface();
     static void Destroy();
@@ -41,8 +43,8 @@ public:
     CTexture* GetTexture( const char* strFileName, ETextureWrapModes eWrapS = RepeatWrapping, ETextureWrapModes eWrapT = RepeatWrapping, ETextureFilters eMagFilter = LinearFilter, ETextureFilters eMinFilter = LinearFilter, bool32 bGenerateMipmaps = False );
     uint32 AddObject( CRefObject* pObj );
     CRefObject* GetRefObject( uint32 nGUID );
-    template<class T>
-    T* GetObject( uint32 nGUID );
+    //template<class T>
+    //T* GetObject( uint32 nGUID );
 
 private:
     map<uint32, SResourceItem>m_vResourceList;
@@ -54,11 +56,11 @@ private:
 #define RESOURCE_REMOVE( p )CResourceManager::GetInterface()->RemoveObject( p ); p = NULL;
 
 
-template <class T>
-T* CResourceManager::GetObject( uint32 nGUID ){
-    T* _pObject = (T*)GetRefObject( nGUID );
-    return _pObject;
-}
+//template <class T>
+//T* CResourceManager::GetObject( uint32 nGUID ){
+//    T* _pObject = (T*)GetRefObject( nGUID );
+//    return _pObject;
+//}
 
 
 #endif
