@@ -93,21 +93,21 @@ public:
     }
     //Construct
     string(){
-        start = end_of_storage = End = nullptr;
+        start = end_of_storage = End = NULL;
     }
     string( const string& rhs ){
-        start = end_of_storage = End = nullptr;
+        start = end_of_storage = End = NULL;
         append( rhs );
     }
-    string( string&& rhs )noexcept :start( rhs.start ), end_of_storage( rhs.end_of_storage ), End( rhs.End ){
-        rhs.start = rhs.end_of_storage = rhs.End = nullptr;
-    }
+    //string( string&& rhs )noexcept :start( rhs.start ), end_of_storage( rhs.end_of_storage ), End( rhs.End ){
+    //    rhs.start = rhs.end_of_storage = rhs.End = NULL;
+    //}
     string( const char* s ){
-        if( s == nullptr )
-            string();
+        if( s == NULL )
+            start = end_of_storage = End = NULL;
         else{
-            int cnt = 0;
-            for( ; s[cnt] != '\0'; cnt++ ){}
+            int cnt = strlen(s);
+            //for( ; s[cnt] != '\0'; cnt++ ){}
             start = (char*)Allocator__allocate( sizeof(char), cnt );// data_allocator.allocate( cnt );
             uninitialized_copy_n( (char*)s, cnt, start );
             end_of_storage = End = start + cnt;
@@ -145,7 +145,7 @@ public:
     //Capacity
     void clear(){
         DeallocateAndDestory();
-        End = start = end_of_storage = nullptr;
+        End = start = end_of_storage = NULL;
     }
     bool empty()const{
         return (start == End);
@@ -187,7 +187,7 @@ public:
         return *start;
     }
     value_type& back(){
-        auto tmp = end();
+        value_type* tmp = end();
         return *(--tmp);
     }
     void push_back( const value_type& val ){
@@ -229,7 +229,7 @@ public:
         End += rhs.size();
     }
     void append( const char* s ){
-        if( s == nullptr ) return;
+        if( s == NULL ) return;
         size_t cnt = 0;
         for( ; s[cnt] != '\0'; cnt++ ){}
         if( capacity() < size() + cnt )	reallocate( size() + cnt );
@@ -238,7 +238,7 @@ public:
     }
     void append( const char* s, size_t l, size_t r ){
         if( r <= l ) return;
-        if( s == nullptr ) return;
+        if( s == NULL ) return;
         if( capacity()<size() + r - l - 1 ) reallocate( size() + r - l );
         uninitialized_copy_n( (char*)(s + l), r - l, End );
         End += r - l;
@@ -271,7 +271,7 @@ public:
     }
     string& assign( const char* s ){
         clear();
-        if( s == nullptr ) return *this;
+        if( s == NULL ) return *this;
         size_t cnt = 0;
         while( s[cnt] != '\0' ) cnt++;
         //start = data_allocator.allocate( cnt );

@@ -5,7 +5,7 @@
 #include <espeak/speak_lib.h>
 #include <standard/vector.h>
 #include <standard/list.h>
-#include <standard/string.h>
+//#include <standard/string.h>
 #include <standard/filewriter.h>
 #include <include/sound.h>
 
@@ -32,7 +32,7 @@ private:
 	char m_strUTF8TextBuff[1024];
 	HSOUNDHANDLE m_hHandle;
 
-    list<string>m_vSpeakTextQuene;
+    list<char*>m_vSpeakTextQuene;
 
 };
 
