@@ -17,6 +17,9 @@
 
 #include <include/stdtype.h>
 
+
+#define LogTrace LogInfo(0, __FILE__, __LINE__ ),LogOut("");
+
 typedef uint32 HTTPHANDLE;
 typedef uint32 REMOTEFILEHANDLE;
 

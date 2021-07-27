@@ -609,10 +609,10 @@ typedef struct
 	short stress_lengths[8];
 	int dict_condition;    // conditional apply some pronunciation rules and dict.lookups
 	int dict_min_size;
-	const unsigned int *charset_a0;   // unicodes for characters 0xa0 to oxff
+	const unsigned short *charset_a0;   // unicodes for characters 0xa0 to oxff
 	const wchar_t *char_plus_apostrophe;  // single chars + apostrophe treated as words
 	const wchar_t *punct_within_word;   // allow these punctuation characters within words
-	const unsigned int*chars_ignore;
+	const unsigned short *chars_ignore;
 
 // holds properties of characters: vowel, consonant, etc for pronunciation rules
 	unsigned char letter_bits[256];
@@ -706,7 +706,7 @@ extern unsigned char punctuation_to_tone[INTONATION_TYPES][PUNCT_INTONATIONS];
 
 extern Translator *translator;
 extern Translator *translator2;
-extern const unsigned int*charsets[N_CHARSETS];
+extern const unsigned short *charsets[N_CHARSETS];
 extern char dictionary_name[40];
 extern char ctrl_embedded;    // to allow an alternative CTRL for embedded commands
 extern unsigned char *p_textinput;
@@ -723,8 +723,8 @@ int utf8_in(int *c, const char *buf);
 int utf8_in2(int *c, const char *buf, int backwards);
 int utf8_out(unsigned int c, char *buf);
 int utf8_nbytes(const char *buf);
-int lookupwchar(const unsigned int *list,int c);
-int lookupwchar2(const unsigned int*list,int c);
+int lookupwchar(const unsigned short *list,int c);
+int lookupwchar2(const unsigned short *list,int c);
 int Eof(void);
 char *strchr_w(const char *s, int c);
 int IsBracket(int c);

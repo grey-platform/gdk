@@ -16,10 +16,10 @@
 
 #include <include/stdtype.h>
 
-#define assert( exp ) if( !(exp) ){___assert___( 0 );}
+#define assert( exp ) if( !(exp) ){___assert___( 0, __FILE__, __LINE__ );}
 
 //#define assert ___assert___
-EXTERN void ___assert___( bool8 exp );
+EXTERN void ___assert___( bool32 exp, const char* file, int fileno );
 
 
 #endif

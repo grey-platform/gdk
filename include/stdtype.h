@@ -144,7 +144,7 @@ p = 0;\
 #elif _NATIVE_
 //#define EXTERN extern "C"
 #else
-#define EXTERN extern "C"
+#define EXTERN //extern "C"
 typedef unsigned char bool;
 #define false 0
 #define true 1
