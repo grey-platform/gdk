@@ -20,7 +20,7 @@
 typedef uint32 HMATERIALHANDLE;
 typedef int32 HMATERIALUNIFORM;
 
-EXTERN HMATERIALHANDLE Material_Create( const char* strVertexShaderCode, const char* strFragmentShaderCode );
+EXTERN HMATERIALHANDLE Material_Create( const char* strName, const char* strVertexShaderCode, const char* strFragmentShaderCode );
 EXTERN bool32 Material_Release( HMATERIALHANDLE hMaterialHandle );
 EXTERN void Material_Begin( HMATERIALHANDLE hMaterialHandle );
 EXTERN void Material_End( HMATERIALHANDLE hMaterialHandle );
