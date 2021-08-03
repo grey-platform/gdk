@@ -113,7 +113,7 @@ EXTERN int ___sscanf___( const char *buffer, const char *format, ... );
 EXTERN _FILE *___tmpfile___( void );
 EXTERN char *___tmpnam___( char *name );
 EXTERN int ___ungetc___( int ch, _FILE *stream );
-EXTERN int ___vprintf___( char *format, va_list arg_ptr );
+EXTERN int ___vprintf___( const char *format, va_list arg_ptr );
 EXTERN int ___vfprintf___( _FILE *stream, const char *format, va_list arg_ptr );
 EXTERN int ___vsprintf___( char *buffer, const char *format, va_list arg_ptr );
 
