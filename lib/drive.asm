@@ -186,7 +186,7 @@ def GUI_Canvas_Create
 def GUI_TextBox_Create
 def GUI_ScrollPanel_Create
 def GUI_SubScrollPanel_Create
-def GUI_3DCanvas_Create
+def GUI_ScrollView_Create
 def GUI_TextView_Create
 def GUI_ListView_Create
 def GUI_EditBox_Create

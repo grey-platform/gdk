@@ -46,7 +46,7 @@ typedef enum EUIElement{
     UI_PROGRESSBAR,
     UI_SCROLLPANEL,
     UI_SUBSCROLLPANEL,
-    UI_3DCANVAS,
+    UI_SCROLLVIEW,
     UI_ANIMATION,
     UI_USERELEMENT,
     UI_USERTRANSFORMELEMENT,
@@ -562,6 +562,15 @@ public:
 //    void SetValue(int32 nValue);
 //};
 
+
+class CScrollView: public CUIElement{
+public:
+    CScrollView(int32 x, int32 y, int32 width, int32 height);
+    virtual ~CScrollView();
+    virtual int32 ProcessClickEvent();
+    virtual int32 ProcessMouseEvent(EUIMouseMessage eMouseMessage, int32 x, int32 y, int32 z, int32 s);
+    CUIEvent* OnMouseEventObject;
+};
 
 
 #endif

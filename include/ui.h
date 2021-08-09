@@ -86,7 +86,7 @@ EXTERN HUIHANDLE GUI_Canvas_Create( int32 fLeft, int32 fTop, int32 fWidth, int32
 EXTERN HUIHANDLE GUI_TextBox_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
 EXTERN HUIHANDLE GUI_ScrollPanel_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
 EXTERN HUIHANDLE GUI_SubScrollPanel_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
-EXTERN HUIHANDLE GUI_3DCanvas_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
+EXTERN HUIHANDLE GUI_ScrollView_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
 EXTERN HUIHANDLE GUI_TextView_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
 EXTERN HUIHANDLE GUI_ListView_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
 EXTERN HUIHANDLE GUI_EditBox_Create( int32 fLeft, int32 fTop, int32 fWidth, int32 fHeight );
