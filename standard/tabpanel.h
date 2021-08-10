@@ -15,8 +15,8 @@
 #define __STANDARD_TABLEPANEL_H__
 
 #include <standard/gui.h>
-//#include <standard/scrolledpanel.h>
 #include <standard/vector.h>
+#include <standard/delegate.h>
 
 struct STabPage{
     CButton* m_pButton;
@@ -30,6 +30,7 @@ public:
     CScrollView* GetTabPage( int32 nIndex );
     int32 GetPageCount();
     bool32 SetPage(int32 nIndex);
+    CDelegate2<CUIElement*, int32 > OnTabPageChange;
 
 private:
     virtual void OnClick(CUIElement* pSelf);

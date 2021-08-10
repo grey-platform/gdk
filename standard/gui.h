@@ -338,6 +338,7 @@ public:
     int32 DispatchEvent( _EUIEventMessage eMessageType, int32 nParame0, int32 nParame1, int32 nParame2, int32 nParame3, int32 nParame4, int32 nParame5, int32 nParame6 );
     void GetPosition( int32 pPos[2] );
     void GetBound( int32 pBound[4] );
+    void GetAbsolutePositon( int32 pPos[2] );
     EUIElement m_eUIElement;    //UI¿‡–Õ
     int32 m_nID;
     int32 m_nGUID;
